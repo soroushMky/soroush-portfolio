@@ -37,7 +37,7 @@ function goTo(page) {
 }
 
 document.addEventListener('click', (e) => {
-  const link = e.target.closest('a.work-row');
+  const link = e.target.closest('a.work-card');
   if (link && link.href) {
     e.preventDefault();
     gsap.to('#app', {
@@ -68,47 +68,27 @@ function filterWork(category) {
   document.querySelectorAll('.filter-btn').forEach(btn => {
     btn.classList.toggle('active', btn.dataset.filter === category);
   });
-  const items = document.querySelectorAll('.work-item');
-  items.forEach(item => {
-    const matches = category === 'all' || item.dataset.category === category;
+  const cards = document.querySelectorAll('.work-card');
+  cards.forEach(card => {
+    const matches = category === 'all' || card.dataset.category === category;
     if (matches) {
-      item.classList.remove('hidden');
-      gsap.fromTo(item, { opacity: 0, y: 8 }, { opacity: 1, y: 0, duration: .3 });
+      card.classList.remove('hidden');
+      gsap.fromTo(card, { opacity: 0, y: 8 }, { opacity: 1, y: 0, duration: .3 });
     } else {
-      item.classList.add('hidden');
+      card.classList.add('hidden');
     }
   });
 }
 
-/* ── 5. FLOATING PREVIEW IMAGE (desktop only) ── */
-const previewImg = document.getElementById('previewImg');
-const workRows = document.querySelectorAll('.work-row');
-
-if (window.innerWidth > 1024) {
-  workRows.forEach(row => {
-    row.addEventListener('mouseenter', () => {
-      const img = row.dataset.img;
-      previewImg.style.backgroundImage = `url(${img})`;
-      previewImg.classList.add('active');
-    });
-    row.addEventListener('mousemove', (e) => {
-      gsap.to(previewImg, { x: e.clientX, y: e.clientY, duration: .4, ease: 'power2.out' });
-    });
-    row.addEventListener('mouseleave', () => {
-      previewImg.classList.remove('active');
-    });
-  });
-}
-
-/* ── 6. ENTRANCE ANIMATIONS ── */
+/* ── 5. ENTRANCE ANIMATIONS ── */
 gsap.set('nav',          { opacity: 0, y: -20 });
 gsap.set('.work-header', { opacity: 0, y: 16 });
-gsap.set('.work-row',    { opacity: 0, x: -16 });
+gsap.set('.work-card',   { opacity: 0, y: 20 });
 
 const tl = gsap.timeline({ delay: .1 });
 tl.to('nav',          { opacity: 1, y: 0, duration: .5, ease: 'power3.out' })
   .to('.work-header', { opacity: 1, y: 0, duration: .6, ease: 'power3.out' }, '-=.2')
-  .to('.work-row',    { opacity: 1, x: 0, duration: .5, stagger: .08, ease: 'power3.out' }, '-=.3');
+  .to('.work-card',   { opacity: 1, y: 0, duration: .55, stagger: .1, ease: 'power3.out' }, '-=.3');
 
 /* ── PARALLAX BACKGROUND (mouse + scroll) ── */
 function initParallax() {
