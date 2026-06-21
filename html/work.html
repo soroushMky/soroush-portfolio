@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Soroush — Work</title>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Serif+Display:ital@0;1&family=Inter:wght@300;400;500;600&family=DM+Mono:wght@300;400;500&display=swap"
+    rel="stylesheet" />
+  <link rel="stylesheet" href="../css/work.css" />
+</head>
+
+<body>
+  <div id="app">
+
+    <canvas id="grain"></canvas>
+    <div class="grid"></div>
+
+    <nav>
+      <div class="nav-logo">SOROUSH</div>
+      <div class="nav-links">
+        <button class="nav-link" onclick="goTo('index.html')">Home</button>
+        <button class="nav-link" onclick="goTo('about.html')">About</button>
+        <button class="nav-link active">Work</button>
+        <button class="nav-link" onclick="goTo('hobbies.html')">Hobbies</button>
+        <button class="nav-link" onclick="goTo('contact.html')">Contact</button>
+      </div>
+      <button class="nav-cta" onclick="goTo('contact.html')">Hire Me</button>
+      <button class="hamburger" id="hamburger" onclick="toggleMenu()">
+        <span></span><span></span><span></span>
+      </button>
+    </nav>
+
+    <div class="mobile-nav" id="mobileNav">
+      <button class="mobile-nav-link" onclick="goTo('index.html')">Home</button>
+      <button class="mobile-nav-link" onclick="goTo('about.html')">About</button>
+      <button class="mobile-nav-link active">Work</button>
+      <button class="mobile-nav-link" onclick="goTo('hobbies.html')">Hobbies</button>
+      <button class="mobile-nav-link" onclick="goTo('contact.html')">Contact</button>
+      <button class="mobile-nav-link" onclick="goTo('contact.html')" style="color:#f97316;">Hire Me</button>
+    </div>
+
+    <div class="page-scroll">
+
+      <div class="work-header">
+        <div class="work-eyebrow">Selected Work</div>
+        <div class="work-filter">
+          <button class="filter-btn active" data-filter="all" onclick="filterWork('all')">All</button>
+          <button class="filter-btn" data-filter="creative" onclick="filterWork('creative')">Creative</button>
+          <button class="filter-btn" data-filter="data" onclick="filterWork('data')">Data</button>
+        </div>
+      </div>
+
+      <div class="work-list" id="workList">
+
+        <div class="work-item" data-category="data">
+          <a class="work-row" href="work-03.html"
+            data-img="https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=600&q=80">
+            <div class="work-row-left">
+              <span class="work-num">01</span>
+              <h2 class="work-title">Nomi — AI Finance Analyzer</h2>
+            </div>
+            <div class="work-row-right">
+              <span class="work-tag">Flask · ML · Claude AI</span>
+              <span class="work-arrow">→</span>
+            </div>
+          </a>
+        </div>
+
+        <div class="work-item" data-category="data">
+          <a class="work-row" href="work-05.html"
+            data-img="https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=600&q=80">
+            <div class="work-row-left">
+              <span class="work-num">02</span>
+              <h2 class="work-title">IPL Cricket Scorecard Dashboard</h2>
+            </div>
+            <div class="work-row-right">
+              <span class="work-tag">PostgreSQL · SQL · Tableau</span>
+              <span class="work-arrow">→</span>
+            </div>
+          </a>
+        </div>
+
+        <div class="work-item" data-category="creative">
+          <a class="work-row" href="work-07.html"
+            data-img="https://images.unsplash.com/photo-1517677208171-0bc6725a3e60?w=600&q=80">
+            <div class="work-row-left">
+              <span class="work-num">03</span>
+              <h2 class="work-title">SwiftWash — Laundry App UX Case Study</h2>
+            </div>
+            <div class="work-row-right">
+              <span class="work-tag">Product Design · UX Research</span>
+              <span class="work-arrow">→</span>
+            </div>
+          </a>
+        </div>
+
+      </div>
+    </div>
+
+    <div class="preview-img" id="previewImg"></div>
+
+  </div>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="../js/work.js"></script>
+</body>
+
+</html>

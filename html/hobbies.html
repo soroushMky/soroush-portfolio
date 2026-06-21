@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Soroush — Hobbies</title>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Serif+Display:ital@0;1&family=Inter:wght@300;400;500;600&family=DM+Mono:wght@300;400;500&display=swap"
+    rel="stylesheet" />
+  <link rel="stylesheet" href="../css/hobbies.css" />
+</head>
+
+<body>
+  <div id="app">
+
+    <canvas id="grain"></canvas>
+    <div class="grid"></div>
+
+    <!-- NAV -->
+    <nav>
+      <div class="nav-logo" onclick="goTo('index.html')">SOROUSH</div>
+      <div class="nav-links">
+        <button class="nav-link" onclick="goTo('index.html')">Home</button>
+        <button class="nav-link" onclick="goTo('about.html')">About</button>
+        <button class="nav-link" onclick="goTo('work.html')">Work</button>
+        <button class="nav-link active">Hobbies</button>
+        <button class="nav-link" onclick="goTo('contact.html')">Contact</button>
+      </div>
+      <button class="nav-cta" onclick="goTo('contact.html')">Hire Me</button>
+      <button class="hamburger" id="hamburger" onclick="toggleMenu()"><span></span><span></span><span></span></button>
+    </nav>
+
+    <div class="mobile-nav" id="mobileNav">
+      <button class="mobile-nav-link" onclick="goTo('index.html')">Home</button>
+      <button class="mobile-nav-link" onclick="goTo('about.html')">About</button>
+      <button class="mobile-nav-link" onclick="goTo('work.html')">Work</button>
+      <button class="mobile-nav-link active">Hobbies</button>
+      <button class="mobile-nav-link" onclick="goTo('contact.html')">Contact</button>
+    </div>
+
+    <div class="page-scroll">
+
+      <!-- BOLD EDITORIAL HOBBIES SECTION -->
+      <div class="hobbies-editorial">
+        <div class="editorial-glow"></div>
+        <div class="editorial-left">
+          <div class="editorial-tag">05 · Beyond Work</div>
+          <h1 class="editorial-title">Beyond the<br><em>Screen.</em></h1>
+          <p class="editorial-text">When I'm not designing interfaces or wrangling data, you'll find me watching movies,
+            deep in a game, recording podcast episodes, or out shooting photo and video always chasing the next thing
+            to learn.</p>
+          <div class="editorial-tags">
+            <span class="editorial-pill">Movies</span>
+            <span class="editorial-pill">Gaming</span>
+            <span class="editorial-pill">Learning</span>
+            <span class="editorial-pill">Podcasting</span>
+            <span class="editorial-pill">Photography</span>
+            <span class="editorial-pill">Videography</span>
+          </div>
+        </div>
+        <div class="editorial-right">
+          <div class="editorial-collage">
+            <div class="collage-img collage-1">
+              <img src="../images/hobbies/collage-1.jpg" alt="" />
+            </div>
+            <div class="collage-img collage-2">
+              <img src="../images/hobbies/collage-2.jpg" alt="" />
+            </div>
+            <div class="collage-img collage-3">
+              <img src="../images/hobbies/collage-3.jpg" alt="" />
+            </div>
+            <div class="collage-img collage-4">
+              <img src="../images/hobbies/collage-4.jpg" alt="" />
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- HOBBY SECTION 01 — MOVIES -->
+      <div class="hobby-section">
+        <div class="hobby-img-wrap">
+          <img src="../images/hobbies/movies.jpg" alt="Movies" />
+        </div>
+        <div class="hobby-text-wrap">
+          <div class="hobby-num">01</div>
+          <div class="hobby-tag">Watching Movies</div>
+          <h2 class="hobby-title">Movies</h2>
+          <p class="hobby-desc">Sci-fi and thrillers are where I keep coming back stories that build a system, then
+            test its limits. I tend to follow a director across their entire filmography once their style clicks; it's
+            the same instinct that makes me study a designer's portfolio for patterns, or a dataset for the story hiding
+            inside it. A great film is really just structure and pacing done right the same principles I lean on when
+            I'm designing an interface or shaping a narrative around numbers. A good night usually ends with a film I've
+            already seen and a new one queued up for tomorrow.</p>
+        </div>
+      </div>
+
+      <!-- HOBBY SECTION 02 — GAMING -->
+      <div class="hobby-section reverse">
+        <div class="hobby-img-wrap">
+          <img src="../images/hobbies/gaming.jpg" alt="Gaming" />
+        </div>
+        <div class="hobby-text-wrap">
+          <div class="hobby-num">02</div>
+          <div class="hobby-tag">Playing Games</div>
+          <h2 class="hobby-title">Gaming</h2>
+          <p class="hobby-desc">Gaming is where I unwind, but it's never just unwinding. Fortnite is fast
+            decision-making under pressure read the situation, adapt, execute. Dota 2 is the opposite end of the same
+            coin: longer-form strategy, team coordination, and a meta that rewards understanding systems deeply rather
+            than reacting fast. Between the two I'm either sharpening reflexes or thinking several moves ahead both
+            skills that carry straight back into design reviews and data problems.</p>
+        </div>
+      </div>
+
+      <!-- HOBBY SECTION 03 — LEARNING -->
+      <div class="hobby-section">
+        <div class="hobby-img-wrap">
+          <img src="../images/hobbies/learning.jpg" alt="Learning" />
+        </div>
+        <div class="hobby-text-wrap">
+          <div class="hobby-num">03</div>
+          <div class="hobby-tag">Learning New Things</div>
+          <h2 class="hobby-title">Learning</h2>
+          <p class="hobby-desc">Learning never really stops for me, and lately most of it is code. I'm constantly
+            pulling apart how things are built a new framework, a cleaner way to structure a function, a pattern I saw
+            in someone else's repo. It scratches the same itch as good design: there's always a more elegant solution
+            hiding under the obvious one. Half the time I start learning something for a client project and end up going
+            down a rabbit hole just because I wanted to understand it properly.</p>
+        </div>
+      </div>
+
+      <!-- HOBBY SECTION 04 — PHOTOGRAPHY -->
+      <div class="hobby-section reverse">
+        <div class="hobby-img-wrap">
+          <img src="../images/hobbies/photography.jpg" alt="Photography" />
+        </div>
+        <div class="hobby-text-wrap">
+          <div class="hobby-num">04</div>
+          <div class="hobby-tag">Photography</div>
+          <h2 class="hobby-title">Behind the Lens</h2>
+          <p class="hobby-desc">Most of what I shoot is buildings I'm drawn to the geometry, the way light hits glass
+            and concrete at different times of day. All of it's on an iPhone, which forces a different kind of
+            discipline: no swapping lenses, just paying closer attention to angle and timing to get the shot right
+            in-camera. It's the same instinct that shows up in my UI work clean lines, intentional framing, nothing
+            extra in the shot that doesn't need to be there.</p>
+          <a href="https://www.instagram.com/normal.day.mtl/" target="_blank" class="hobby-ig-link">
+            <svg class="ig-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <rect x="2" y="2" width="20" height="20" rx="5" stroke="currentColor" stroke-width="1.8" />
+              <circle cx="12" cy="12" r="4.2" stroke="currentColor" stroke-width="1.8" />
+              <circle cx="17.2" cy="6.8" r="1.1" fill="currentColor" />
+            </svg>
+            @normal.day.mtl
+          </a>
+        </div>
+      </div>
+
+      <!-- PHOTOGRAPHY GALLERY GRID -->
+      <div class="hobbies-header">
+        <div class="hobbies-eyebrow">Selected Shots</div>
+        <h1 class="hobbies-title">Through the Lens</h1>
+        <p class="hobbies-subtitle">A small selection from behind the camera.</p>
+      </div>
+
+      <div class="photo-grid" id="photoGrid">
+        <div class="photo-item" data-img="../images/hobbies/gallery-01.jpg">
+          <img src="../images/hobbies/gallery-01.jpg" alt="Building photography" />
+        </div>
+        <div class="photo-item" data-img="../images/hobbies/gallery-02.jpg">
+          <img src="../images/hobbies/gallery-02.jpg" alt="Building photography" />
+        </div>
+        <div class="photo-item" data-img="../images/hobbies/gallery-03.jpg">
+          <img src="../images/hobbies/gallery-03.jpg" alt="Building photography" />
+        </div>
+        <div class="photo-item" data-img="../images/hobbies/gallery-04.jpg">
+          <img src="../images/hobbies/gallery-04.jpg" alt="Building photography" />
+        </div>
+        <div class="photo-item" data-img="../images/hobbies/gallery-05.jpg">
+          <img src="../images/hobbies/gallery-05.jpg" alt="Building photography" />
+        </div>
+        <div class="photo-item" data-img="../images/hobbies/gallery-06.jpg">
+          <img src="../images/hobbies/gallery-06.jpg" alt="Building photography" />
+        </div>
+        <div class="photo-item" data-img="../images/hobbies/gallery-07.jpg">
+          <img src="../images/hobbies/gallery-07.jpg" alt="Building photography" />
+        </div>
+        <div class="photo-item" data-img="../images/hobbies/gallery-08.jpg">
+          <img src="../images/hobbies/gallery-08.jpg" alt="Building photography" />
+        </div>
+      </div>
+
+      <div class="hobbies-note">
+        <span class="note-dot"></span>
+        Placeholder images shown — swap with your own photos in the <code>images/hobbies/</code> folder
+      </div>
+
+    </div>
+
+    <!-- LIGHTBOX -->
+    <div class="lightbox" id="lightbox">
+      <button class="lightbox-close" onclick="closeLightbox()">×</button>
+      <button class="lightbox-nav prev" onclick="navigateLightbox(-1)">←</button>
+      <img class="lightbox-img" id="lightboxImg" src="" alt="" />
+      <button class="lightbox-nav next" onclick="navigateLightbox(1)">→</button>
+    </div>
+
+  </div>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="../js/hobbies.js"></script>
+</body>
+
+</html>

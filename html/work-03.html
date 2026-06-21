@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Soroush — Nomi</title>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Serif+Display:ital@0;1&family=Inter:wght@300;400;500;600&family=DM+Mono:wght@300;400;500&display=swap"
+    rel="stylesheet" />
+  <link rel="stylesheet" href="../css/project.css" />
+</head>
+
+<body class="data-project">
+  <div id="app">
+
+    <canvas id="grain"></canvas>
+    <div class="grid"></div>
+
+    <nav>
+      <div class="nav-logo" onclick="goTo('index.html')">SOROUSH</div>
+      <div class="nav-links">
+        <button class="nav-link" onclick="goTo('index.html')">Home</button>
+        <button class="nav-link" onclick="goTo('about.html')">About</button>
+        <button class="nav-link active" onclick="goTo('work.html')">Work</button>
+        <button class="nav-link" onclick="goTo('hobbies.html')">Hobbies</button>
+        <button class="nav-link" onclick="goTo('contact.html')">Contact</button>
+      </div>
+      <button class="nav-cta" onclick="goTo('contact.html')">Hire Me</button>
+      <button class="hamburger" id="hamburger" onclick="toggleMenu()"><span></span><span></span><span></span></button>
+    </nav>
+
+    <div class="mobile-nav" id="mobileNav">
+      <button class="mobile-nav-link" onclick="goTo('index.html')">Home</button>
+      <button class="mobile-nav-link" onclick="goTo('about.html')">About</button>
+      <button class="mobile-nav-link active" onclick="goTo('work.html')">Work</button>
+      <button class="mobile-nav-link" onclick="goTo('hobbies.html')">Hobbies</button>
+      <button class="mobile-nav-link" onclick="goTo('contact.html')">Contact</button>
+      <button class="mobile-nav-link" onclick="goTo('contact.html')" style="color:#4d88ff;">Hire Me</button>
+    </div>
+
+    <a class="back-link" href="work.html" data-transition><span class="arrow">←</span> Back to Work</a>
+
+    <div class="project-hero">
+      <div class="project-eyebrow">Full-Stack Data App · AI Integration</div>
+      <h1 class="project-title">Nomi — AI-Powered Personal Finance Analyzer</h1>
+      <p class="project-subtitle">A full-stack financial intelligence dashboard built with Python, Flask, SQL, and
+        Claude AI — turning raw bank transaction data into anomaly detection, AI-generated reports, and a conversational
+        finance coach.</p>
+    </div>
+
+    <div class="project-meta-bar">
+      <div class="meta-item"><span class="meta-label">Type</span><span class="meta-val">Full-Stack Data App</span></div>
+      <div class="meta-item"><span class="meta-label">Stack</span><span class="meta-val">Flask · SQLAlchemy ·
+          scikit-learn</span></div>
+      <div class="meta-item"><span class="meta-label">AI</span><span class="meta-val">Claude Sonnet 4.6 API</span></div>
+      <div class="meta-item"><span class="meta-label">Live Demo</span><span class="meta-val"><a
+            href="https://financeiq-92ut.onrender.com" target="_blank"
+            style="color:#4d88ff;text-decoration:none;border-bottom:1px solid #4d88ff44;">financeiq-92ut.onrender.com
+            ↗</a></span></div>
+    </div>
+
+    <div class="project-image-block screenshot">
+      <img src="../images/work/nomi/dashboard-overview.png" alt="Nomi dashboard overview" />
+    </div>
+
+    <!-- OVERVIEW -->
+    <div class="project-section">
+      <div class="section-label"><span class="section-num">01</span> Overview</div>
+      <p class="section-text">Nomi is a personal finance analytics platform that transforms raw bank transaction data
+        into actionable insights. Built as a portfolio project to demonstrate proficiency in data engineering, machine
+        learning, SQL, and AI integration — the exact skills required for modern data analyst and AI engineering roles.
+      </p>
+      <p class="section-text">The app processes a real Kaggle personal finance dataset — <strong>617 transactions across
+          2018–2019</strong> — and surfaces patterns, anomalies, and trends through interactive visualizations and an AI
+        coach powered by Anthropic's Claude.</p>
+    </div>
+
+    <div class="tech-stack-row">
+      <div class="tech-pill">Python 3</div>
+      <div class="tech-pill">Flask</div>
+      <div class="tech-pill">SQLAlchemy</div>
+      <div class="tech-pill">SQLite</div>
+      <div class="tech-pill">pandas</div>
+      <div class="tech-pill">NumPy</div>
+      <div class="tech-pill">scikit-learn</div>
+      <div class="tech-pill">Claude API</div>
+      <div class="tech-pill">Chart.js</div>
+      <div class="tech-pill">Flask-Login</div>
+      <div class="tech-pill">Flask-Bcrypt</div>
+      <div class="tech-pill">Render</div>
+    </div>
+
+    <!-- ARCHITECTURE -->
+    <div class="project-section">
+      <div class="section-label"><span class="section-num">02</span> Architecture</div>
+      <p class="section-text">A clean four-layer system: a vanilla JS frontend talks to a Flask REST API, which reads
+        from SQLite through a SQLAlchemy ORM and calls out to Claude for anything requiring reasoning over the user's
+        full financial context.</p>
+    </div>
+
+    <div class="code-block">┌─────────────────────────────────────────────────┐
+      │ Frontend │
+      │ HTML/CSS/JS · Chart.js · Particle Animation │
+      └──────────────────┬──────────────────────────────┘
+      │ HTTP / REST API
+      ┌──────────────────▼──────────────────────────────┐
+      │ Flask Backend │
+      │ │
+      │ ┌─────────────┐ ┌──────────────┐ │
+      │ │ Auth API │ │ Data API │ │
+      │ │ /register │ │ /summary │ │
+      │ │ /login │ │ /monthly │ │
+      │ │ /logout │ │ /categories │ │
+      │ └─────────────┘ │ /anomalies │ │
+      │ │ /sql-insights│ │
+      │ ┌─────────────┐ └──────────────┘ │
+      │ │ AI API │ ┌──────────────┐ │
+      │ │ /ai/chat │ │ ML Pipeline │ │
+      │ │ /generate- │ │ Isolation │ │
+      │ │ report │ │ Forest │ │
+      │ └─────────────┘ └──────────────┘ │
+      └──────────────────┬──────────────────────────────┘
+      │
+      ┌──────────────────▼──────────────────────────────┐
+      │ SQLite Database │
+      │ users · transactions · budgets · goals │
+      └─────────────────────────────────────────────────┘
+      │
+      ┌──────────────────▼──────────────────────────────┐
+      │ Anthropic Claude API │
+      │ AI Coach · Report Generator · Categorizer │
+      └─────────────────────────────────────────────────┘</div>
+
+    <!-- DATA PIPELINE -->
+    <div class="project-section">
+      <div class="section-label"><span class="section-num">03</span> Data Pipeline</div>
+      <p class="section-text">CSV upload supports multiple bank formats — TD Bank, RBC, BMO, Chase, and more — with
+        flexible column mapping to handle inconsistent schemas. Data cleaning automatically strips credit card payments,
+        paychecks, and non-debit entries before anything touches the database.</p>
+    </div>
+
+    <div class="code-block">Raw CSV (bank export)
+      ↓
+      pandas ingestion + column mapping
+      ↓
+      Data cleaning (remove non-spending rows)
+      ↓
+      SQLite storage via SQLAlchemy ORM
+      ↓
+      Isolation Forest anomaly detection
+      ↓
+      Health score calculation (5 metrics)
+      ↓
+      REST API endpoints
+      ↓
+      Chart.js visualizations + AI insights</div>
+
+    <!-- DASHBOARD / FEATURES -->
+    <div class="project-section">
+      <div class="section-label"><span class="section-num">04</span> Data Analytics</div>
+      <p class="section-text">An interactive dashboard surfaces KPI cards with animated number transitions — total
+        spend, monthly averages, top categories, anomaly counts. A monthly trend line chart caught a real home
+        renovation spike (<strong>+82%</strong> in May–June 2018), while a horizontal bar chart breaks spending across
+        18 categories. Budget-vs-actual and year-over-year comparisons round out the analytics layer.</p>
+    </div>
+
+    <div class="gallery-grid">
+      <img src="../images/work/nomi/monthly-trend.png" alt="Monthly trend analysis chart" />
+      <img src="../images/work/nomi/category-breakdown.png" alt="Category breakdown chart" />
+      <img src="../images/work/nomi/budget-vs-actual.png" alt="Budget vs actual comparison" />
+    </div>
+
+    <!-- AI & ML -->
+    <div class="project-section">
+      <div class="section-label"><span class="section-num">05</span> AI & Machine Learning</div>
+      <p class="section-text">An <strong>Isolation Forest</strong> model flags transactions exceeding 2× the category
+        average, automatically filtering out recurring payments to avoid false positives. Every flagged anomaly is then
+        passed to Claude, which explains <em>why</em> it stands out in plain language — the model detects, the LLM
+        explains.</p>
+    </div>
+
+    <div class="code-block"><span class="com"># Simplified anomaly detection pipeline</span>
+      <span class="kw">from</span> sklearn.ensemble <span class="kw">import</span> IsolationForest
+
+      model = IsolationForest(contamination=<span class="str">0.02</span>, random_state=<span class="str">42</span>)
+      model.fit(transaction_features)
+
+      anomaly_scores = model.decision_function(transaction_features)
+      flagged = transactions[model.predict(transaction_features) == -<span class="str">1</span>]
+
+      <span class="com"># Pass flagged transactions to Claude for explanation</span>
+      explanation = claude_client.explain(flagged_transaction)
+    </div>
+
+    <div class="project-section">
+      <p class="section-text">Beyond anomaly detection, Claude powers a full <strong>AI Financial Coach</strong> chat
+        interface with complete context awareness, a one-click <strong>AI Report Generator</strong> that produces an
+        executive summary with monthly analysis and personalized recommendations, and feeds into a composite
+        <strong>Financial Health Score</strong> (0–100) built from spending consistency, budget adherence, anomaly
+        frequency, and goal progress.</p>
+    </div>
+
+    <div class="gallery-grid two-col">
+      <img src="../images/work/nomi/ai-coach-chat.png" alt="AI financial coach chat interface" />
+      <img src="../images/work/nomi/ai-report.png" alt="AI generated financial report" />
+    </div>
+
+    <!-- SQL & DATABASE -->
+    <div class="project-section">
+      <div class="section-label"><span class="section-num">06</span> SQL & Database</div>
+      <p class="section-text">Five real SQL queries run live against SQLite, each with a toggleable code view so the
+        query itself is part of the presentation, not hidden behind an API call: top merchants by spend, spending by
+        account with averages, biggest single transactions, category breakdown with calculated percentages, and a
+        monthly comparison built on <code>strftime</code> grouping.</p>
+    </div>
+
+    <div class="project-image-block screenshot">
+      <img src="../images/work/nomi/sql-insights.png" alt="Live SQL insights panel" />
+    </div>
+
+    <!-- KEY DECISIONS -->
+    <div class="project-section">
+      <div class="section-label"><span class="section-num">07</span> Key Technical Decisions</div>
+      <p class="section-text"><strong>Why Isolation Forest for anomaly detection?</strong> It's unsupervised — no
+        labeled training data required, which is ideal for personal finance where "normal" varies entirely by user. It
+        isolates anomalies by randomly partitioning the feature space, making it efficient even on small datasets.</p>
+      <p class="section-text"><strong>Why SQLite instead of PostgreSQL?</strong> Zero-configuration and sufficient for
+        single-user financial data. The SQLAlchemy ORM means switching to PostgreSQL for production requires only a
+        one-line config change — demonstrating production-aware architecture without over-engineering the prototype.</p>
+      <p class="section-text"><strong>Why Flask over Django?</strong> Flask's minimal footprint gives explicit control
+        over every component — ideal for a portfolio project where understanding the full stack matters more than rapid
+        scaffolding.</p>
+      <p class="section-text"><strong>Why Claude over GPT?</strong> Claude's larger context window allows injecting the
+        full transaction history, monthly totals, and category breakdowns into every AI request — enabling genuinely
+        personalized financial advice rather than generic responses.</p>
+    </div>
+
+    <!-- DATASET -->
+    <div class="project-section">
+      <div class="section-label"><span class="section-num">08</span> Dataset</div>
+      <p class="section-text">Sourced from a public Kaggle personal finance dataset. Raw data arrived as <strong>806
+          transactions</strong> across 2018–2019; after cleaning — removing credit card payments, paychecks, and
+        non-debit entries — <strong>617 spending transactions</strong> remained across 18 categories and 3 accounts
+        (Checking, Platinum Card, Silver Card).</p>
+      <p class="section-text">The standout finding the model surfaced on its own: a home renovation in May–June 2018
+        caused an <strong>82% spending spike</strong> — $17,200 to a single contractor, Mike's Construction Co.</p>
+    </div>
+
+    <div class="results-grid">
+      <div class="result-stat">
+        <div class="result-num">617</div>
+        <div class="result-label">Spending Transactions</div>
+      </div>
+      <div class="result-stat">
+        <div class="result-num">18</div>
+        <div class="result-label">Spending Categories</div>
+      </div>
+      <div class="result-stat">
+        <div class="result-num">82<span>%</span></div>
+        <div class="result-label">Detected Spending Spike</div>
+      </div>
+    </div>
+
+    <!-- API ENDPOINTS -->
+    <div class="project-section">
+      <div class="section-label"><span class="section-num">09</span> API Endpoints</div>
+      <p class="section-text">16 REST endpoints span authentication, analytics, ML, and AI — a representative slice
+        below:</p>
+    </div>
+
+    <div class="code-block">POST /api/auth/register Create new user account
+      POST /api/auth/login Authenticate user
+      GET /api/summary KPI totals + health score
+      GET /api/monthly Monthly spending by month
+      GET /api/categories Spending by category
+      GET /api/anomalies ML-detected anomalies
+      GET /api/sql-insights 5 live SQL query results
+      GET /api/yearly-comparison Year-over-year data
+      POST /api/generate-report AI financial report
+      POST /api/ai/chat AI coach conversation
+      POST /api/upload Upload custom CSV</div>
+
+    <!-- WHAT I LEARNED -->
+    <div class="project-section">
+      <div class="section-label"><span class="section-num">10</span> What I Learned</div>
+    </div>
+    <div class="learnings-list">
+      <div class="learning-item">
+        <div class="learning-num">01</div>
+        <div class="learning-text"><strong>End-to-end data pipeline</strong> — from raw CSV to cleaned database to API
+          to visualization, with every transformation traceable.</div>
+      </div>
+      <div class="learning-item">
+        <div class="learning-num">02</div>
+        <div class="learning-text"><strong>ML in production</strong> — implementing and deploying Isolation Forest with
+          proper feature engineering, not just a notebook experiment.</div>
+      </div>
+      <div class="learning-item">
+        <div class="learning-num">03</div>
+        <div class="learning-text"><strong>AI integration</strong> — prompt engineering with full financial context for
+          meaningful, personalized responses rather than generic LLM output.</div>
+      </div>
+      <div class="learning-item">
+        <div class="learning-num">04</div>
+        <div class="learning-text"><strong>SQL at scale</strong> — writing complex queries with subqueries,
+          aggregations, and patterns ready for window functions.</div>
+      </div>
+      <div class="learning-item">
+        <div class="learning-num">05</div>
+        <div class="learning-text"><strong>UX for data</strong> — making complex financial data readable and actionable
+          for non-technical users, not just technically correct.</div>
+      </div>
+    </div>
+
+    <!-- ROADMAP -->
+    <div class="project-section">
+      <div class="section-label"><span class="section-num">11</span> Roadmap</div>
+      <p class="section-text">An AI transaction categorizer to auto-categorize uncategorized CSV uploads, a spending
+        forecast using time-series analysis, downloadable PDF reports, a full light-mode design system, a PostgreSQL
+        migration for production, and a React frontend rebuild are all next.</p>
+    </div>
+
+    <div class="project-nav">
+      <a class="project-nav-link prev" href="work-07.html" data-transition>
+        <span class="nav-direction">← Previous</span>
+        <span class="nav-project-title">SwiftWash — Laundry App</span>
+      </a>
+      <a class="project-nav-link next" href="work-05.html" data-transition>
+        <span class="nav-direction">Next →</span>
+        <span class="nav-project-title">IPL Cricket Dashboard</span>
+      </a>
+    </div>
+
+    <div class="project-end-space"></div>
+
+  </div>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="../js/project.js"></script>
+</body>
+
+</html>

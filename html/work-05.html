@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Soroush — IPL Cricket Scorecard Dashboard</title>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Serif+Display:ital@0;1&family=Inter:wght@300;400;500;600&family=DM+Mono:wght@300;400;500&display=swap"
+    rel="stylesheet" />
+  <link rel="stylesheet" href="../css/project.css" />
+</head>
+
+<body class="data-project">
+  <div id="app">
+    <canvas id="grain"></canvas>
+    <div class="grid"></div>
+    <nav>
+      <div class="nav-logo" onclick="goTo('index.html')">SOROUSH</div>
+      <div class="nav-links">
+        <button class="nav-link" onclick="goTo('index.html')">Home</button>
+        <button class="nav-link" onclick="goTo('about.html')">About</button>
+        <button class="nav-link active" onclick="goTo('work.html')">Work</button>
+        <button class="nav-link" onclick="goTo('hobbies.html')">Hobbies</button>
+        <button class="nav-link" onclick="goTo('contact.html')">Contact</button>
+      </div>
+      <button class="nav-cta" onclick="goTo('contact.html')">Hire Me</button>
+      <button class="hamburger" id="hamburger" onclick="toggleMenu()"><span></span><span></span><span></span></button>
+    </nav>
+    <div class="mobile-nav" id="mobileNav">
+      <button class="mobile-nav-link" onclick="goTo('index.html')">Home</button>
+      <button class="mobile-nav-link" onclick="goTo('about.html')">About</button>
+      <button class="mobile-nav-link active" onclick="goTo('work.html')">Work</button>
+      <button class="mobile-nav-link" onclick="goTo('hobbies.html')">Hobbies</button>
+      <button class="mobile-nav-link" onclick="goTo('contact.html')">Contact</button>
+      <button class="mobile-nav-link" onclick="goTo('contact.html')" style="color:#4d88ff;">Hire Me</button>
+    </div>
+
+    <a class="back-link" href="work.html" data-transition><span class="arrow">←</span> Back to Work</a>
+
+    <div class="project-hero">
+      <div class="project-eyebrow">SQL · Data Modeling · Tableau</div>
+      <h1 class="project-title">IPL Cricket Scorecard Dashboard</h1>
+      <p class="project-subtitle">A PostgreSQL database and scorecard-style Tableau dashboard analyzing IPL cricket
+        matches — built to demonstrate relational data modeling, analytical SQL, and interview-ready dashboard design.
+      </p>
+    </div>
+
+    <div class="project-meta-bar">
+      <div class="meta-item"><span class="meta-label">Type</span><span class="meta-val">SQL + BI Dashboard</span></div>
+      <div class="meta-item"><span class="meta-label">Database</span><span class="meta-val">PostgreSQL</span></div>
+      <div class="meta-item"><span class="meta-label">Visualization</span><span class="meta-val">Tableau Desktop</span>
+      </div>
+      <div class="meta-item"><span class="meta-label">GitHub</span><span class="meta-val"><a
+            href="https://github.com/soroushMky/IPA-Dashboard" target="_blank"
+            style="color:#4d88ff;text-decoration:none;border-bottom:1px solid #4d88ff44;">soroushMky/IPA-Dashboard
+            ↗</a></span></div>
+    </div>
+
+    <!-- PROJECT GOALS -->
+    <div class="project-section">
+      <div class="section-label"><span class="section-num">01</span> Project Goals</div>
+      <p class="section-text">Build a relational database for IPL matches, deliveries, players, and teams — then answer
+        real cricket analytics questions: who are the top run-scorers in a tournament, which bowlers have the best
+        economy rate, and how do two specific teams stack up head-to-head.</p>
+      <p class="section-text">The dashboard itself was the harder constraint: it needed to <strong>look and feel like a
+          real cricket scorecard</strong>, with interactive filters and team-level insights, not just a generic BI
+        report.</p>
+    </div>
+
+    <div class="tech-stack-row">
+      <div class="tech-pill">PostgreSQL</div>
+      <div class="tech-pill">Tableau Desktop</div>
+      <div class="tech-pill">SQL</div>
+      <div class="tech-pill">Calculated Fields</div>
+    </div>
+
+    <!-- DATA & TABLES -->
+    <div class="project-section">
+      <div class="section-label"><span class="section-num">02</span> Data & Tables</div>
+      <p class="section-text">CSV/XLSX files — matches, deliveries, players, teams, and aggregated stats — loaded into a
+        five-table PostgreSQL schema. <code>matches</code> holds match-level data (season, date, city, teams, winner,
+        margin, venue, umpires). <code>deliveries</code> holds ball-by-ball data — match ID, inning, over, ball,
+        batsman, bowler, runs, and dismissal info. <code>players</code>, <code>most_runs</code>, and
+        <code>team_home_away</code> round out player metadata and pre-aggregated performance views.</p>
+    </div>
+
+    <div class="code-block"><span class="com">-- matches: match_id, season, date, city, team1, team2,</span>
+      <span class="com">-- winner, win_by_runs, win_by_wickets, venue</span>
+
+      <span class="com">-- deliveries: match_id, inning, batting_team, bowling_team,</span>
+      <span class="com">-- over, ball, batsman, bowler, batsman_runs,</span>
+      <span class="com">-- extra_runs, total_runs, dismissal_kind</span>
+
+      <span class="com">-- players: player_name, dob, batting_hand, bowling_skill, country</span>
+
+      <span class="com">-- most_runs: batsman, totalruns, numberofballs, average, strikerate</span>
+
+      <span class="com">-- team_home_away: team, wins, matches, win_percentage</span>
+    </div>
+
+    <!-- KEY QUERIES -->
+    <div class="project-section">
+      <div class="section-label"><span class="section-num">03</span> Key Analytics Queries</div>
+      <p class="section-text"><strong>Top 5 run-scorers</strong> — a straightforward aggregation against the
+        pre-computed <code>most_runs</code> table, ordered by total runs.</p>
+    </div>
+
+    <div class="code-block"><span class="kw">SELECT</span> batsman, totalruns, average, strikerate
+      <span class="kw">FROM</span> most_runs
+      <span class="kw">ORDER BY</span> totalruns <span class="kw">DESC</span>
+      <span class="kw">LIMIT</span> 5;
+    </div>
+
+    <div class="project-section">
+      <p class="section-text"><strong>Best bowlers by economy rate</strong> — calculated directly from ball-by-ball
+        <code>deliveries</code> data, with a minimum-overs filter so a bowler with one great over doesn't outrank
+        someone with a real sample size.</p>
+    </div>
+
+    <div class="code-block"><span class="kw">SELECT</span>
+      bowler,
+      <span class="kw">SUM</span>(total_runs) <span class="kw">AS</span> runs_conceded,
+      <span class="kw">COUNT</span>(*) <span class="kw">AS</span> balls_bowled,
+      <span class="kw">ROUND</span>(<span class="kw">COUNT</span>(*)::NUMERIC / 6, 2) <span class="kw">AS</span>
+      overs_bowled,
+      <span class="kw">ROUND</span>(<span class="kw">SUM</span>(total_runs)::NUMERIC / (<span
+        class="kw">COUNT</span>(*)::NUMERIC / 6), 2) <span class="kw">AS</span> economy_rate
+      <span class="kw">FROM</span> deliveries
+      <span class="kw">GROUP BY</span> bowler
+      <span class="kw">HAVING COUNT</span>(*) >= 24 <span class="com">-- 24 balls = 4 overs minimum</span>
+      <span class="kw">ORDER BY</span> economy_rate <span class="kw">ASC</span>
+      <span class="kw">LIMIT</span> 5;
+    </div>
+
+    <div class="project-section">
+      <p class="section-text"><strong>Head-to-head results</strong> — matches between any two specific teams, regardless
+        of which one is listed as team1 or team2 in the raw data.</p>
+    </div>
+
+    <div class="code-block"><span class="kw">SELECT</span> match_date, team1, team2, winner, win_by_runs,
+      win_by_wickets, venue
+      <span class="kw">FROM</span> matches
+      <span class="kw">WHERE</span> (team1 = <span class="str">'Team A'</span> <span class="kw">AND</span> team2 = <span
+        class="str">'Team B'</span>)
+      <span class="kw">OR</span> (team1 = <span class="str">'Team B'</span> <span class="kw">AND</span> team2 = <span
+        class="str">'Team A'</span>)
+      <span class="kw">ORDER BY</span> match_date;
+    </div>
+
+    <!-- DASHBOARD FEATURES -->
+    <div class="project-section">
+      <div class="section-label"><span class="section-num">04</span> Tableau Dashboard Features</div>
+      <p class="section-text">The <strong>Match Scorecard View</strong> mirrors a real scorecard — match header (season,
+        teams, venue, date, result), innings summary (runs, wickets, overs, run rate), and batting/bowling tables styled
+        to match.</p>
+      <p class="section-text">A <strong>Selected Team</strong> parameter drives two linked views simultaneously: top 5
+        batsmen by total runs for that team, and best bowlers by economy rate when bowling for that team. Two more
+        parameters — <strong>Team A</strong> and <strong>Team B</strong> — power a head-to-head sheet, using a
+        calculated Boolean field that returns true for matches between those two teams regardless of listing order.</p>
+      <p class="section-text">Every view updates instantly when the selected team or team pair changes — no separate
+        filter clicks required across sheets.</p>
+    </div>
+
+    <!-- TECHNICAL DECISIONS -->
+    <div class="project-section">
+      <div class="section-label"><span class="section-num">05</span> Key Technical Decisions</div>
+      <p class="section-text"><strong>Why PostgreSQL over a flat-file approach?</strong> Ball-by-ball delivery data
+        multiplies fast — relational joins across matches, deliveries, and players let the analytical queries stay
+        simple SQL instead of pre-flattening everything into a single bloated table.</p>
+      <p class="section-text"><strong>Why a minimum-overs filter on economy rate?</strong> Without it, a bowler who
+        threw four unhittable balls in a single over would outrank a genuinely consistent bowler — the filter (24 balls
+        / 4 overs) is the difference between a real metric and a statistical artifact.</p>
+      <p class="section-text"><strong>Why parameter-driven sheets instead of static views per team?</strong> 8–10 IPL
+        teams means 8–10x the maintenance if each had its own sheet. One parameterized view scales to any team or
+        matchup without duplicating dashboard logic.</p>
+    </div>
+
+    <!-- RESULTS -->
+    <div class="results-grid">
+      <div class="result-stat">
+        <div class="result-num">5</div>
+        <div class="result-label">Relational Tables</div>
+      </div>
+      <div class="result-stat">
+        <div class="result-num">3</div>
+        <div class="result-label">Linked Parameters</div>
+      </div>
+      <div class="result-stat">
+        <div class="result-num">24</div>
+        <div class="result-label">Ball Minimum Filter</div>
+      </div>
+    </div>
+
+    <!-- LEARNINGS -->
+    <div class="project-section">
+      <div class="section-label"><span class="section-num">06</span> What I Learned</div>
+    </div>
+    <div class="learnings-list">
+      <div class="learning-item">
+        <div class="learning-num">01</div>
+        <div class="learning-text">Translating a sports analytics use case into a relational schema forces you to think
+          about grain — match-level vs. ball-level data — before a single query gets written.</div>
+      </div>
+      <div class="learning-item">
+        <div class="learning-num">02</div>
+        <div class="learning-text">Writing SQL against questions a real fan would ask (top scorers, best economy,
+          head-to-head) is a different discipline than writing SQL against abstract requirements.</div>
+      </div>
+      <div class="learning-item">
+        <div class="learning-num">03</div>
+        <div class="learning-text">A dashboard that visually mimics the thing it represents — a scorecard that looks
+          like a scorecard — builds trust faster than a generic chart ever could.</div>
+      </div>
+    </div>
+
+    <!-- ROADMAP -->
+    <div class="project-section">
+      <div class="section-label"><span class="section-num">07</span> Roadmap</div>
+      <p class="section-text">Next: extend the schema across more seasons, add player profile pages, and layer in
+        predictive models — win probability per match, player performance rankings — on top of the existing relational
+        structure.</p>
+    </div>
+
+    <div class="project-nav">
+      <a class="project-nav-link prev" href="work-03.html" data-transition>
+        <span class="nav-direction">← Previous</span>
+        <span class="nav-project-title">Nomi — AI Finance Analyzer</span>
+      </a>
+      <a class="project-nav-link next" href="work-07.html" data-transition>
+        <span class="nav-direction">Next →</span>
+        <span class="nav-project-title">SwiftWash — Laundry App</span>
+      </a>
+    </div>
+    <div class="project-end-space"></div>
+  </div>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="../js/project.js"></script>
+</body>
+
+</html>

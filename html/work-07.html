@@ -1,0 +1,382 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Soroush — SwiftWash</title>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Serif+Display:ital@0;1&family=Inter:wght@300;400;500;600&family=DM+Mono:wght@300;400;500&display=swap"
+    rel="stylesheet" />
+  <link rel="stylesheet" href="../css/project.css" />
+</head>
+
+<body>
+  <div id="app">
+
+    <canvas id="grain"></canvas>
+    <div class="grid"></div>
+
+    <nav>
+      <div class="nav-logo" onclick="goTo('index.html')">SOROUSH</div>
+      <div class="nav-links">
+        <button class="nav-link" onclick="goTo('index.html')">Home</button>
+        <button class="nav-link" onclick="goTo('about.html')">About</button>
+        <button class="nav-link active" onclick="goTo('work.html')">Work</button>
+        <button class="nav-link" onclick="goTo('hobbies.html')">Hobbies</button>
+        <button class="nav-link" onclick="goTo('contact.html')">Contact</button>
+      </div>
+      <button class="nav-cta" onclick="goTo('contact.html')">Hire Me</button>
+      <button class="hamburger" id="hamburger" onclick="toggleMenu()"><span></span><span></span><span></span></button>
+    </nav>
+
+    <div class="mobile-nav" id="mobileNav">
+      <button class="mobile-nav-link" onclick="goTo('index.html')">Home</button>
+      <button class="mobile-nav-link" onclick="goTo('about.html')">About</button>
+      <button class="mobile-nav-link active" onclick="goTo('work.html')">Work</button>
+      <button class="mobile-nav-link" onclick="goTo('hobbies.html')">Hobbies</button>
+      <button class="mobile-nav-link" onclick="goTo('contact.html')">Contact</button>
+      <button class="mobile-nav-link" onclick="goTo('contact.html')" style="color:#f97316;">Hire Me</button>
+    </div>
+
+    <a class="back-link" href="work.html" data-transition><span class="arrow">←</span> Back to Work</a>
+
+    <div class="project-hero">
+      <div class="project-eyebrow">UX Case Study · Product Design</div>
+      <h1 class="project-title">SwiftWash — Laundry, Without the Guesswork</h1>
+      <p class="project-subtitle">Cutting laundry-room guesswork in multi-unit buildings. Shared laundry rooms run on
+        guesswork no visibility into machine availability, no way to pay except cash, no way to reserve a machine
+        before walking down.</p>
+    </div>
+
+    <div class="project-meta-bar">
+      <div class="meta-item"><span class="meta-label">Role</span><span class="meta-val">Solo Product Designer</span>
+      </div>
+      <div class="meta-item"><span class="meta-label">Scope</span><span class="meta-val">Research · Strategy · UX · UI ·
+          Testing</span></div>
+      <div class="meta-item"><span class="meta-label">Timeline</span><span class="meta-val">1 month + 2 revision
+          rounds</span></div>
+      <div class="meta-item"><span class="meta-label">Tools</span><span class="meta-val">Figma · User Interviews</span>
+      </div>
+    </div>
+
+    <!-- INTRO / DECISION -->
+    <div class="project-section">
+      <div class="section-label"><span class="section-num">—</span> The Decision That Defines This Project</div>
+      <p class="section-text">I scoped the product around three problems — <strong>availability, payment,
+          reservation</strong> — and said no to almost everything else my own brainstorming produced. This case study
+        shows exactly where that discipline held, where it slipped, and what I did about it.</p>
+    </div>
+
+    <!-- THE PROBLEM -->
+    <div class="project-section">
+      <div class="section-label"><span class="section-num">01</span> The Problem, From the Inside</div>
+      <p class="section-text">I live in a multi-unit building. Two washers, four dryers, dozens of residents. There's no
+        way to know a machine is free without walking down and checking. There's no way to pay except hoarding quarters.
+        There's no way to know your load is done without standing next to it.</p>
+      <p class="section-text">I interviewed residents across the building students, young professionals, families,
+        older residents specifically to avoid designing for people like me. The pattern was immediate and consistent:
+        <strong>availability, payment, and visibility</strong> were the three things every conversation came back to.
+      </p>
+    </div>
+
+    <!-- PROCESS OVERVIEW -->
+    <div class="project-section">
+      <div class="section-label"><span class="section-num">02</span> Process Three Layers of Iteration</div>
+      <p class="section-text">This project didn't move in a straight line, and I think that's the most useful thing
+        about it. <strong>v1</strong> was scoped tightly around three research-backed priorities. <strong>Usability
+          testing</strong> then told me where that scope held and where it didn't. <strong>v2</strong> was a direct
+        response to that testing. A later <strong>design review</strong> a self-audit against my own brief, separate
+        from user testing caught a second layer of smaller issues, leading to <strong>v2.1</strong>.</p>
+    </div>
+
+    <div class="project-image-block small">
+      <img src="../images/work/swiftwash/03-three-layer-iteration.png" alt="Three layer iteration flowchart" />
+    </div>
+
+    <!-- 1. DISCOVER -->
+    <div class="project-section">
+      <div class="section-label"><span class="section-num">03</span> Discover</div>
+      <p class="section-text">I ran one-on-one interviews rather than a survey, because the core problem was about trust
+        ("will this actually be free when I get there?") as much as function. With a sample this size a handful of
+        residents, not hundreds — I'm treating these as directional signals that shaped priority, not statistically
+        rigorous findings.</p>
+    </div>
+
+    <div class="project-image-block small">
+      <img src="../images/work/swiftwash/01-discover-research-data.png" alt="Discovery research data chart" />
+    </div>
+
+    <div class="project-image-block small">
+      <img src="../images/work/swiftwash/07-insights-priority.png" alt="Discovery insights priority" />
+    </div>
+
+    <!-- 2. COMPETITIVE ANALYSIS -->
+    <div class="project-section">
+      <div class="section-label"><span class="section-num">04</span> Competitive Analysis</div>
+      <p class="section-text"><strong>Laundry Cat</strong> owns "modern and cashless" but has thin marketing and
+        reported reliability complaints. <strong>Coinamatic</strong> owns "established and trusted" — 75 years in
+        market, deep property-manager relationships but its product is built around institutional reliability, not
+        resident experience. Neither solved for reservations or real-time visibility the exact gap SwiftWash was built
+        to fill.</p>
+    </div>
+
+    <div class="project-image-block">
+      <img src="../images/work/swiftwash/08-competitive-comparison.png" alt="Competitive feature comparison" />
+    </div>
+
+    <!-- 3. DEFINE -->
+    <div class="project-section">
+      <div class="section-label"><span class="section-num">05</span> Define</div>
+      <p class="section-text">Two personas, deliberately pulling the design in opposite directions:
+        <strong>John</strong>, a budget-constrained student whose real constraint is cost certainty, and
+        <strong>Sarah</strong>, a time-constrained professional whose real constraint is not wasting a five-minute
+        window on something unreliable.
+      </p>
+      <p class="section-text">Empathy mapping surfaced one shared insight that mattered more than anything specific to
+        either persona: both described checking with other people roommates, group chats, colleagues before
+        trusting a service. That single insight is the entire justification for every community feature that appears
+        later in this document.</p>
+    </div>
+
+    <div class="project-image-block">
+      <img src="../images/work/swiftwash/09-persona-comparison.png" alt="Persona comparison cards" />
+    </div>
+
+    <!-- 4. IDEATE -->
+    <div class="project-section">
+      <div class="section-label"><span class="section-num">06</span> Ideate</div>
+      <p class="section-text">Before any screens, I mapped the highest-frequency task end to end starting a machine
+        and paying for it and held it to <strong>seven steps</strong> deliberately. Every extra step in a daily-use
+        task is friction multiplied by frequency, so step count was a budget I was actively managing.</p>
+    </div>
+
+    <div class="project-image-block">
+      <img src="../images/work/swiftwash/04-task-flow.png" alt="Task flow chart" />
+    </div>
+
+    <div class="project-image-block">
+      <img src="../images/work/swiftwash/05-user-flow-structure.png" alt="User flow structural diagram" />
+    </div>
+
+    <!-- 5. DESIGN v1 -->
+    <div class="project-section">
+      <div class="section-label"><span class="section-num">07</span> Design — v1</div>
+      <p class="section-text"><strong>Onboarding.</strong> Residents verify against their building's serial number
+        before account creation, then log in with one-time-password and email verification rather than a static
+        password a deliberate trade of sign-in friction for protection against account-sharing on a shared resource.
+      </p>
+    </div>
+
+    <div class="gallery-grid">
+      <img src="../images/work/swiftwash/signup.PNG" alt="Create account screen" />
+      <img src="../images/work/swiftwash/payment-details.PNG" alt="Payment method setup screen" />
+      <img src="../images/work/swiftwash/terms-of-service.PNG" alt="Terms and conditions screen" />
+    </div>
+
+    <div class="project-section">
+      <p class="section-text"><strong>Core flow.</strong> The home dashboard answers "is anything free right now?" in
+        one glance — live status per machine, wallet balance, one clear call to action.</p>
+    </div>
+
+    <div class="gallery-grid two-col">
+      <img src="../images/work/swiftwash/home.PNG" alt="Home dashboard screen" />
+      <img src="../images/work/swiftwash/select-cycle.PNG" alt="Washer cycle selection screen" />
+    </div>
+
+    <div class="project-section">
+      <p class="section-text">The points-and-game-wagering layer that appears elsewhere in v1 is the one feature here I
+        can't trace back to a piece of research that demanded it more on that in the Revise section.</p>
+    </div>
+
+    <!-- 6. TEST -->
+    <div class="project-section">
+      <div class="section-label"><span class="section-num">08</span> Test</div>
+      <p class="section-text">Five moderated sessions three students, two professionals — matching the makeup of my
+        original interview pool.</p>
+    </div>
+
+    <div class="project-image-block">
+      <img src="../images/work/swiftwash/02-usability-test-scores.png" alt="Usability test scores chart" />
+    </div>
+
+    <div class="project-section">
+      <p class="section-text"><strong>Task 1 — book a machine for later today.</strong> 3 of 5 completed with no
+        hesitation. 2 of 5 hesitated specifically at being charged based on reservation time. Ease of use scored
+        <strong>4.5/5</strong>; payment clarity scored <strong>3.5/5</strong>.
+      </p>
+      <p class="section-text">That one-point gap is the most useful single data point this project produced: the flow
+        worked, the cost transparency of reservations didn't.</p>
+      <p class="section-text"><strong>Task 2 — engage with gamification.</strong> Ease of use scored 5/5, but students
+        and professionals wanted different reward logic entirely a sign the feature was designed before its audience
+        was.</p>
+      <p class="section-text">What users explicitly asked for: a recurring schedule with reminders instead of a one-off
+        reservation, and the ability to book further than 10 minutes in advance.</p>
+    </div>
+
+    <!-- 7. REVISE v2 -->
+    <div class="project-section">
+      <div class="section-label"><span class="section-num">09</span> Revise — v2</div>
+      <p class="section-text">Testing produced five direct fixes.</p>
+      <p class="section-text"><strong>Fix 1 — scheduled, recurring booking</strong> replaces the original short hold.
+        Residents pick a day and time window, with an option to repeat weekly, and fairness is enforced through a cap on
+        total active reservations rather than a countdown timer.</p>
+    </div>
+
+    <div class="project-image-block screenshot">
+      <img src="../images/work/swiftwash/schedule.PNG" alt="Schedule a wash screen" />
+    </div>
+
+    <div class="project-section">
+      <p class="section-text"><strong>Fix 2 — an itemized payment breakdown</strong> replaces the vague reservation
+        charge that caused the 3.5/5 score. Cost, timing, and cancellation terms are now stated plainly before any
+        charge is made.</p>
+    </div>
+
+    <div class="project-image-block screenshot">
+      <img src="../images/work/swiftwash/confirm.PNG" alt="Confirm and pay screen" />
+    </div>
+
+    <div class="project-section">
+      <p class="section-text"><strong>Fix 3 — a waitlist queue</strong> handles the case testing didn't originally
+        cover: what happens when every machine is booked.</p>
+    </div>
+
+    <div class="project-image-block screenshot">
+      <img src="../images/work/swiftwash/waitlist.PNG" alt="All machines busy queue screen" />
+    </div>
+
+    <div class="project-section">
+      <p class="section-text"><strong>Fix 4 — off-peak rewards</strong> is the redesign I'm most willing to talk through
+        in detail, because it's a correction, not a deletion. The original points-and-games layer had no research
+        behind it and tested as motivationally mismatched between personas. The instinct — residents respond to small,
+        tangible rewards wasn't wrong. The target was. The real, evidenced problem is demand clustering: residents
+        pile into the same few peak hours. v2 keeps the reward instinct but re-points it at that actual problem.</p>
+    </div>
+
+    <div class="project-image-block screenshot">
+      <img src="../images/work/swiftwash/off-peak.PNG" alt="Off-peak time-slot picker screen" />
+    </div>
+
+    <div class="project-section">
+      <p class="section-text"><strong>Fix 5 — a property-manager view</strong> answers the one competitive gap v1 had no
+        response to. A lightweight dashboard gives building staff utilization data and a maintenance queue fed directly
+        by resident reports.</p>
+    </div>
+
+    <div class="project-image-block screenshot">
+      <img src="../images/work/swiftwash/admin.PNG" alt="Property manager dashboard screen" />
+    </div>
+
+    <!-- 8. POLISH v2.1 -->
+    <div class="project-section">
+      <div class="section-label"><span class="section-num">10</span> Polish — v2.1</div>
+      <p class="section-text">After building v2, I ran a structured design review against my own brief separate from
+        user testing, a self-audit for shipping-readiness. It caught four smaller issues, the kind that get noticed in a
+        senior portfolio review specifically because they're easy to miss.</p>
+      <p class="section-text"><strong>Scheduling and off-peak rewards had drifted into two competing flows.</strong> I
+        merged them into one screen, so demand level, credit, and booking happen in a single coherent path instead of
+        two screens that didn't obviously connect.</p>
+    </div>
+
+    <div class="project-section">
+      <p class="section-text"><strong>The day picker couldn't distinguish "today" from "selected."</strong> Fixed with
+        an explicit label, since conflating orientation with selection was the same category of ambiguity that caused
+        the original payment-clarity problem.</p>
+      <p class="section-text"><strong>Messenger read as a support inbox, not the community feature the empathy map
+          actually justified.</strong> Rebuilt as a real building-wide group thread, with official channels clearly
+        tagged so they don't get confused with peer conversation.</p>
+    </div>
+
+    <div class="project-image-block screenshot">
+      <img src="../images/work/swiftwash/chat.PNG" alt="Group chat screen, white theme" />
+    </div>
+
+    <div class="project-section">
+      <p class="section-text"><strong>Error, empty, and loading states existed in the brief but not in the
+          build.</strong> Added all three, plus the OTP verification screen that had been skipped.</p>
+    </div>
+
+    <div class="project-image-block screenshot">
+      <img src="../images/work/swiftwash/otp.PNG" alt="OTP verification screen, white theme" />
+    </div>
+
+    <!-- SUCCESS METRICS -->
+    <div class="project-section">
+      <div class="section-label"><span class="section-num">11</span> Success Metrics</div>
+      <p class="section-text">If this shipped, here's what I'd track, and why each metric maps to a specific fix above:
+        reservation-to-completion rate validates the scheduling redesign; payment drop-off rate validates the
+        cost-clarity fix; average queue wait time validates the waitlist; the peak-versus-off-peak booking split
+        validates the rewards redesign; maintenance resolution time validates the property-manager loop.</p>
+      <p class="section-text">I'm including this without invented numbers — this didn't ship because knowing what
+        "working" would look like is part of the design, not an afterthought to it.</p>
+    </div>
+
+    <div class="project-image-block">
+      <img src="../images/work/swiftwash/10-success-metrics.png" alt="Success metrics dashboard" />
+    </div>
+
+    <!-- EDGE CASES & ACCESSIBILITY -->
+    <div class="project-section">
+      <div class="section-label"><span class="section-num">12</span> Edge Cases & Accessibility</div>
+      <p class="section-text">Payment failing mid-reservation releases the hold immediately rather than silently keeping
+        a machine blocked. A machine breaking mid-cycle triggers an automatic refund prompt and a one-tap maintenance
+        report. A queued resident who doesn't respond in time passes their slot to the next person rather than holding
+        the line hostage.</p>
+      <p class="section-text">Status indicators are never color-only every status pairs a color with a text label, so
+        the system holds up under color blindness and screen readers. Tap targets on the machine grid are sized for
+        one-handed use, since this is a product people frequently operate while carrying a laundry basket.</p>
+    </div>
+
+    <div class="project-image-block">
+      <img src="../images/work/swiftwash/06-edge-cases.png" alt="Edge cases diagram" />
+    </div>
+
+    <!-- LEARNINGS / NEXT -->
+    <div class="project-section">
+      <div class="section-label"><span class="section-num">13</span> What I'd Actually Do Next</div>
+      <p class="section-text">Two fixes, in order: validate that the off-peak credit amounts genuinely shift booking
+        behavior, since that's a pricing experiment and not a design one and pilot the property-manager view with one
+        real building contact before building it further.</p>
+    </div>
+
+    <div class="learnings-list">
+      <div class="learning-item">
+        <div class="learning-num">01</div>
+        <div class="learning-text"><strong>v1</strong> proved I could design a coherent product end to end in a month.
+        </div>
+      </div>
+      <div class="learning-item">
+        <div class="learning-num">02</div>
+        <div class="learning-text"><strong>v2</strong> proved I could take real test data — including data that
+          contradicted my own choices — and turn it into something measurably more defensible.</div>
+      </div>
+      <div class="learning-item">
+        <div class="learning-num">03</div>
+        <div class="learning-text"><strong>v2.1</strong> proved that discipline holds up even without anyone telling me
+          to look. That progression, more than any single screen, is what I'd want to walk through in an interview.
+        </div>
+      </div>
+    </div>
+
+    <!-- PREV / NEXT -->
+    <div class="project-nav">
+      <a class="project-nav-link prev" href="work-05.html" data-transition>
+        <span class="nav-direction">← Previous</span>
+        <span class="nav-project-title">IPL Cricket Dashboard</span>
+      </a>
+      <a class="project-nav-link next" href="work-03.html" data-transition>
+        <span class="nav-direction">Next →</span>
+        <span class="nav-project-title">Nomi — AI Finance Analyzer</span>
+      </a>
+    </div>
+
+    <div class="project-end-space"></div>
+
+  </div>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="../js/project.js"></script>
+</body>
+
+</html>

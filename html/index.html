@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Soroush — Portfolio</title>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@300;400;500;600&family=DM+Mono:wght@300;400;500&display=swap"
+    rel="stylesheet" />
+  <link rel="stylesheet" href="../css/style.css" />
+</head>
+
+<body>
+  <div id="app">
+
+    <canvas id="grain"></canvas>
+    <div class="grid"></div>
+    <div class="accent-dot"></div>
+
+    <!-- NAV -->
+    <nav>
+      <div class="nav-logo">SOROUSH</div>
+      <div class="nav-links">
+        <button class="nav-link active">Home</button>
+        <button class="nav-link" onclick="goTo('about.html')">About</button>
+        <button class="nav-link" onclick="goTo('work.html')">Work</button>
+        <button class="nav-link" onclick="goTo('hobbies.html')">Hobbies</button>
+        <button class="nav-link" onclick="goTo('contact.html')">Contact</button>
+      </div>
+      <button class="nav-cta" onclick="goTo('contact.html')">Hire Me</button>
+      <button class="hamburger" id="hamburger" onclick="toggleMenu()">
+        <span></span><span></span><span></span>
+      </button>
+    </nav>
+
+    <!-- MOBILE NAV DRAWER -->
+    <div class="mobile-nav" id="mobileNav">
+      <button class="mobile-nav-link active">Home</button>
+      <button class="mobile-nav-link" onclick="goTo('about.html')">About</button>
+      <button class="mobile-nav-link" onclick="goTo('work.html')">Work</button>
+      <button class="mobile-nav-link" onclick="goTo('hobbies.html')">Hobbies</button>
+      <button class="mobile-nav-link" onclick="goTo('contact.html')">Contact</button>
+      <button class="mobile-nav-link" onclick="goTo('contact.html')" style="color:#f97316;">Hire Me</button>
+    </div>
+
+    <!-- MOBILE-FLOW WRAPPER: on desktop this is display:contents (invisible, no effect).
+       On mobile it becomes a real flex column so content stacks naturally and scrolls. -->
+    <div class="mobile-flow">
+
+      <!-- OVAL STACK: groups oval/rings/portrait so mobile can size them as one unit -->
+      <div class="oval-stack">
+        <!-- OVAL RINGS -->
+        <div class="oval-ring-outer"></div>
+        <div class="oval-ring"></div>
+
+        <!-- ROTATING TEXT RING -->
+        <div class="oval-text-ring" id="textRing">
+          <svg viewBox="0 0 355 475" xmlns="http://www.w3.org/2000/svg">
+            <defs>
+              <path id="outerOval"
+                d="M 177.5,18 C 280,18 337,120 337,237.5 C 337,355 280,457 177.5,457 C 75,457 18,355 18,237.5 C 18,120 75,18 177.5,18 Z" />
+            </defs>
+            <text>
+              <textPath href="#outerOval" startOffset="0%">SOROUSH · PRODUCT DESIGNER · WEB DEVELOPER · DATA ANALYST ·
+                SOROUSH · PRODUCT DESIGNER · WEB DEVELOPER · DATA ANALYST ·</textPath>
+            </text>
+          </svg>
+        </div>
+
+        <!-- PORTRAIT -->
+        <div class="portrait-wrap" id="portrait">
+          <img id="portrait-img" src="../images/hero-creative.png" alt="Soroush"
+            style="width:100%;height:100%;object-fit:cover;object-position:center top;" />
+        </div>
+      </div>
+
+      <!-- INFO LEFT -->
+      <div class="info-left" id="infoL">
+        <div>
+          <div class="info-label">Expertise</div>
+          <div class="info-value">
+            <span>UI/UX Design</span><span>Motion Design</span>
+            <span>Web Design</span><span>Data Analytics</span>
+          </div>
+        </div>
+        <div>
+          <div class="info-label">Based In</div>
+          <div class="info-value"><span>Canada</span></div>
+        </div>
+        <div>
+          <div class="info-label">Skills</div>
+          <div class="skills-grid">
+            <div class="skill-cell"><span class="skill-cat">Design</span><span class="skill-val">Figma · Adobe Suite ·
+                Webflow</span></div>
+            <div class="skill-cell"><span class="skill-cat">Code</span><span class="skill-val">HTML · CSS · JS ·
+                WordPress</span></div>
+            <div class="skill-cell"><span class="skill-cat">Motion</span><span class="skill-val">After Effects ·
+                Premiere</span></div>
+            <div class="skill-cell"><span class="skill-cat">Strategy</span><span class="skill-val">Brand Systems · UX
+                Research</span></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- INFO RIGHT -->
+      <div class="info-right" id="infoR">
+        <div>
+          <div class="info-label">Speciality</div>
+          <div class="info-value">
+            <span>Product Design</span><span>Brand Systems</span>
+            <span>Design Leadership</span><span>Motion & Visual</span>
+          </div>
+        </div>
+        <div>
+          <div class="info-label">Experience</div>
+          <div class="info-value">
+            <span>UI/UX — 6 Years</span>
+            <span>Graphic Art — 2 Years</span>
+            <span>Web Design — 4 Years</span>
+          </div>
+        </div>
+        <div>
+          <div class="info-label">Projects Done</div>
+          <div class="info-value"><span>10+ Completed</span></div>
+        </div>
+      </div>
+
+      <!-- MOBILE INFO STRIP (hidden on desktop via JS/CSS) -->
+      <div class="mobile-info-strip" id="mobileStrip" style="display:none;">
+        <div class="mobile-info-item">
+          <div class="mobile-info-label">Expertise</div>
+          <div class="mobile-info-value" id="m-expertise">UI/UX · Motion · Web</div>
+        </div>
+        <div class="mobile-info-item">
+          <div class="mobile-info-label">Based In</div>
+          <div class="mobile-info-value">Canada</div>
+        </div>
+        <div class="mobile-info-item">
+          <div class="mobile-info-label">Experience</div>
+          <div class="mobile-info-value" id="m-experience">6 Yrs UI/UX</div>
+        </div>
+        <div class="mobile-info-item">
+          <div class="mobile-info-label">Speciality</div>
+          <div class="mobile-info-value" id="m-speciality">Product · Brand</div>
+        </div>
+        <div class="mobile-info-item">
+          <div class="mobile-info-label">Projects</div>
+          <div class="mobile-info-value" id="m-projects">10+ Done</div>
+        </div>
+        <div class="mobile-info-item">
+          <div class="mobile-info-label">Available</div>
+          <div class="mobile-info-value">Freelance</div>
+        </div>
+      </div>
+
+      <!-- BOTTOM -->
+      <div class="hero-bottom">
+        <div class="bottom-name">SOROUSH</div>
+        <div class="bottom-title">
+          <div class="title-line"></div>
+          <div class="title-txt">
+            Product Designer<span class="title-sep"> | </span>
+            Web Developer<span class="title-sep"> | </span>
+            Data Analyst<span class="title-sep"> |</span>
+          </div>
+          <div class="title-line"></div>
+        </div>
+        <div class="resume-buttons">
+          <a href="../resumes/resume-design.pdf" download class="resume-btn design-btn">
+            <span class="resume-icon">↓</span> Design Resume
+          </a>
+          <a href="../resumes/resume-data.pdf" download class="resume-btn data-btn">
+            <span class="resume-icon">↓</span> Data Resume
+          </a>
+        </div>
+      </div>
+
+      <!-- MODE TOGGLE -->
+      <div class="mode-toggle">
+        <button class="m-btn on-creative" id="btnC" onclick="setMode('creative')">Creative</button>
+        <button class="m-btn" id="btnD" onclick="setMode('data')">Data</button>
+      </div>
+
+    </div> <!-- /.mobile-flow -->
+
+    <!-- SCROLL CUE -->
+    <div class="scroll-cue">
+      <div class="scroll-txt">Scroll</div>
+      <div class="scroll-bar"></div>
+    </div>
+
+  </div>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="../js/main.js"></script>
+  <script>
+    function toggleMenu() {
+      const h = document.getElementById('hamburger');
+      const m = document.getElementById('mobileNav');
+      h.classList.toggle('open');
+      m.classList.toggle('open');
+    }
+    document.addEventListener('click', (e) => {
+      const h = document.getElementById('hamburger');
+      const m = document.getElementById('mobileNav');
+      if (!h.contains(e.target) && !m.contains(e.target)) {
+        h.classList.remove('open'); m.classList.remove('open');
+      }
+    });
+  </script>
+</body>
+
+</html>

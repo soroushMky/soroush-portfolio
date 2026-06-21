@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Soroush — About</title>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Serif+Display:ital@0;1&family=Inter:wght@300;400;500;600&family=DM+Mono:wght@300;400;500&display=swap"
+    rel="stylesheet" />
+  <link rel="stylesheet" href="../css/about.css" />
+</head>
+
+<body>
+  <div id="app">
+
+    <canvas id="grain"></canvas>
+    <div class="grid"></div>
+
+    <!-- NAV -->
+    <nav>
+      <div class="nav-logo">SOROUSH</div>
+      <div class="nav-links">
+        <button class="nav-link" onclick="goTo('index.html')">Home</button>
+        <button class="nav-link active">About</button>
+        <button class="nav-link" onclick="goTo('work.html')">Work</button>
+        <button class="nav-link" onclick="goTo('hobbies.html')">Hobbies</button>
+        <button class="nav-link" onclick="goTo('contact.html')">Contact</button>
+      </div>
+      <button class="nav-cta" onclick="goTo('contact.html')">Hire Me</button>
+      <button class="hamburger" id="hamburger" onclick="toggleMenu()">
+        <span></span><span></span><span></span>
+      </button>
+    </nav>
+
+    <!-- MOBILE NAV DRAWER -->
+    <div class="mobile-nav" id="mobileNav">
+      <button class="mobile-nav-link" onclick="goTo('index.html')">Home</button>
+      <button class="mobile-nav-link active">About</button>
+      <button class="mobile-nav-link" onclick="goTo('work.html')">Work</button>
+      <button class="mobile-nav-link" onclick="goTo('hobbies.html')">Hobbies</button>
+      <button class="mobile-nav-link" onclick="goTo('contact.html')">Contact</button>
+      <button class="mobile-nav-link" onclick="goTo('contact.html')" style="color:#f97316;">Hire Me</button>
+    </div>
+
+    <!-- ABOUT LAYOUT -->
+    <div class="about-wrap">
+
+      <!-- LEFT -->
+      <div class="about-left" id="aLeft">
+        <div class="about-photo-wrap">
+          <img id="about-img" src="../images/hero-creative.png" alt="Soroush" class="about-photo" />
+          <div class="photo-tag" id="about-photo-tag">Creative</div>
+        </div>
+        <div class="about-stats">
+          <div class="stat">
+            <div class="stat-num">6<span>+</span></div>
+            <div class="stat-label">Years UI/UX</div>
+          </div>
+          <div class="stat">
+            <div class="stat-num">10<span>+</span></div>
+            <div class="stat-label">Projects</div>
+          </div>
+          <div class="stat">
+            <div class="stat-num">4</div>
+            <div class="stat-label">Industries</div>
+          </div>
+          <div class="stat">
+            <div class="stat-num">2</div>
+            <div class="stat-label">Disciplines</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- CENTER -->
+      <div class="about-center" id="aCenter">
+        <div class="about-eyebrow">About Me</div>
+        <h1 class="about-headline">Design meets <em>Data.</em></h1>
+        <p class="about-bio">
+          I didn't start out doing one thing — I started doing everything.
+          Designing logos. Building websites. Running campaigns. Crunching data.
+          Somewhere in that chaos I found my edge: I speak the language of both
+          <strong>design and data</strong>, and I use both to build products that actually work.
+        </p>
+        <p class="about-bio">
+          Over <strong>6+ years</strong> I've worked across UI/UX, product design, graphic art,
+          and data analytics — contributing to brands like <strong>RUDSAK, Boutique TAG,
+            Reno Viva, and Parto Ads</strong>. I've redesigned e&#8209;commerce interfaces that lifted
+          mobile conversion by <strong>12%</strong>, built accessible healthcare portals that
+          reduced support inquiries by <strong>20%</strong>, and delivered data dashboards
+          that turned raw numbers into real decisions.
+        </p>
+        <p class="about-bio">
+          My background in <strong>Electrical & Computer Engineering</strong> (MEng, Concordia)
+          means I don't just design how things look — I think about how they
+          <strong>work, scale, and perform</strong>. Whether you're a startup needing a
+          designer who can also read your data, or a team looking for someone who
+          bridges creativity and logic — I'm ready.
+        </p>
+        <div class="brands-wrap">
+          <div class="brands-label">Worked With</div>
+          <div class="brands-list">
+            <span class="brand">Cameo Knit</span><span class="brand-sep">·</span>
+            <span class="brand">CCubed</span><span class="brand-sep">·</span>
+            <span class="brand">RUDSAK</span><span class="brand-sep">·</span>
+            <span class="brand">Boutique TAG</span><span class="brand-sep">·</span>
+            <span class="brand">Reno Viva</span><span class="brand-sep">·</span>
+            <span class="brand">Parto Ads</span>
+          </div>
+        </div>
+        <div class="focus-wrap">
+          <div class="focus-pill orange">Product Design</div>
+          <div class="focus-pill orange">Graphic Art</div>
+          <div class="focus-pill blue">Data Analytics</div>
+          <div class="focus-pill blue">Machine Learning</div>
+        </div>
+      </div>
+
+      <!-- RIGHT -->
+      <div class="about-right" id="aRight">
+        <div class="timeline-label">Career Journey</div>
+        <div class="timeline">
+          <div class="tl-item">
+            <div class="tl-dot"></div>
+            <div class="tl-content">
+              <div class="tl-year">Oct 2025 — Present</div>
+              <div class="tl-title">Graphic & Packaging Specialist</div>
+              <div class="tl-company">Cameo Knit · Montreal</div>
+              <div class="tl-desc">Collaborating with global brands Reebok, FILA, Dickies, Roots, Polar Heat on
+                retail packaging & PDQ displays, ensuring full brand and retailer compliance. Presenting design
+                directions directly to the CEO and head office.</div>
+            </div>
+          </div>
+
+          <div class="tl-item">
+            <div class="tl-dot"></div>
+            <div class="tl-content">
+              <div class="tl-year">2025 — Present</div>
+              <div class="tl-title">Head of Design</div>
+              <div class="tl-company">CCubed · Montreal</div>
+              <div class="tl-desc">Leading end-to-end UX & visual design. Boosted event page visits by 30–50% and
+                improved homepage comprehension to ~85–90%.</div>
+            </div>
+          </div>
+          <div class="tl-item">
+            <div class="tl-dot"></div>
+            <div class="tl-content">
+              <div class="tl-year">2024 — Present</div>
+              <div class="tl-title">Product Designer & Data Analyst</div>
+              <div class="tl-company">Freelance · Remote</div>
+              <div class="tl-desc">E-commerce, healthcare, fintech & SaaS. Improved mobile conversion by 12% and reduced
+                support inquiries by 20%.</div>
+            </div>
+          </div>
+          <div class="tl-item">
+            <div class="tl-dot"></div>
+            <div class="tl-content">
+              <div class="tl-year">May – Dec 2023</div>
+              <div class="tl-title">Graphic Artist & Product Designer</div>
+              <div class="tl-company">RUDSAK · Montreal</div>
+              <div class="tl-desc">Led graphic design for Canada's leading outerwear brand. Designed 60% of the entire
+                product visual range.</div>
+            </div>
+          </div>
+          <div class="tl-item">
+            <div class="tl-dot"></div>
+            <div class="tl-content">
+              <div class="tl-year">May – Jul 2023</div>
+              <div class="tl-title">UI/UX Designer & Graphic Artist</div>
+              <div class="tl-company">Boutique TAG · Montreal</div>
+              <div class="tl-desc">Digital & visual assets for a luxury fashion retailer. UI improvements enhancing
+                product discovery and visual hierarchy.</div>
+            </div>
+          </div>
+          <div class="tl-item">
+            <div class="tl-dot"></div>
+            <div class="tl-content">
+              <div class="tl-year">Feb 2021 – Dec 2022</div>
+              <div class="tl-title">UI/UX & Brand Designer</div>
+              <div class="tl-company">Parto Ads · Full-time</div>
+              <div class="tl-desc">Led UX design & brand strategy for a digital agency across advertising, e-commerce,
+                and mobile app sectors.</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="../js/about.js"></script>
+  <script>
+    function toggleMenu() {
+      const h = document.getElementById('hamburger');
+      const m = document.getElementById('mobileNav');
+      h.classList.toggle('open');
+      m.classList.toggle('open');
+    }
+    document.addEventListener('click', (e) => {
+      const h = document.getElementById('hamburger');
+      const m = document.getElementById('mobileNav');
+      if (!h.contains(e.target) && !m.contains(e.target)) {
+        h.classList.remove('open'); m.classList.remove('open');
+      }
+    });
+  </script>
+</body>
+
+</html>

@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Soroush — RUDSAK Outerwear Campaign</title>
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Serif+Display:ital@0;1&family=Inter:wght@300;400;500;600&family=DM+Mono:wght@300;400;500&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="../css/project.css"/>
+</head>
+<body>
+<div id="app">
+
+  <canvas id="grain"></canvas>
+  <div class="grid"></div>
+
+  <nav>
+    <div class="nav-logo" onclick="goTo('index.html')">SOROUSH</div>
+    <div class="nav-links">
+      <button class="nav-link" onclick="goTo('index.html')">Home</button>
+      <button class="nav-link" onclick="goTo('about.html')">About</button>
+      <button class="nav-link active" onclick="goTo('work.html')">Work</button>
+      <button class="nav-link" onclick="goTo('hobbies.html')">Hobbies</button>
+      <button class="nav-link" onclick="goTo('contact.html')">Contact</button>
+    </div>
+    <button class="nav-cta" onclick="goTo('contact.html')">Hire Me</button>
+    <button class="hamburger" id="hamburger" onclick="toggleMenu()"><span></span><span></span><span></span></button>
+  </nav>
+
+  <div class="mobile-nav" id="mobileNav">
+    <button class="mobile-nav-link" onclick="goTo('index.html')">Home</button>
+    <button class="mobile-nav-link" onclick="goTo('about.html')">About</button>
+    <button class="mobile-nav-link active" onclick="goTo('work.html')">Work</button>
+    <button class="mobile-nav-link" onclick="goTo('hobbies.html')">Hobbies</button>
+    <button class="mobile-nav-link" onclick="goTo('contact.html')">Contact</button>
+    <button class="mobile-nav-link" onclick="goTo('contact.html')" style="color:#f97316;">Hire Me</button>
+  </div>
+
+  <a class="back-link" href="work.html" data-transition><span class="arrow">←</span> Back to Work</a>
+
+  <div class="project-hero">
+    <div class="project-eyebrow">Branding · Product Design</div>
+    <h1 class="project-title">RUDSAK — Outerwear Campaign</h1>
+    <p class="project-subtitle">Leading graphic design and product positioning for one of Canada's leading outerwear brands, across digital and physical touchpoints.</p>
+  </div>
+
+  <div class="project-meta-bar">
+    <div class="meta-item"><span class="meta-label">Client</span><span class="meta-val">RUDSAK</span></div>
+    <div class="meta-item"><span class="meta-label">Role</span><span class="meta-val">Graphic Artist & Product Designer</span></div>
+    <div class="meta-item"><span class="meta-label">Duration</span><span class="meta-val">May – Dec 2023 · 8 months</span></div>
+    <div class="meta-item"><span class="meta-label">Tools</span><span class="meta-val">Figma · Adobe Suite</span></div>
+  </div>
+
+  <div class="project-hero-img">
+    <img src="https://images.unsplash.com/photo-1503602642458-232111445657?w=1600&q=80" alt="RUDSAK campaign hero"/>
+  </div>
+
+  <!-- RESEARCH -->
+  <div class="project-section">
+    <div class="section-label"><span class="section-num">01</span> Research</div>
+    <p class="section-text">RUDSAK needed cohesive seasonal visual assets across digital and physical touchpoints — but campaigns were being produced ad-hoc, with no unified system tying them together.</p>
+    <p class="section-text">I conducted <strong>customer and stakeholder research</strong> to identify pain points across the existing visual library, analyzing market trends among comparable outerwear brands to understand where RUDSAK's brand expression was falling short of competitors.</p>
+    <p class="section-text">Key finding: imagery across channels felt disconnected — e-commerce banners, in-store signage, and social content all spoke different visual languages.</p>
+  </div>
+
+  <div class="project-image-block">
+    <img src="https://images.unsplash.com/photo-1556228720-195a672e8a03?w=1400&q=80" alt="Research moodboard"/>
+    <div class="image-caption">Early moodboard exploration — texture, tone, and seasonal palette direction</div>
+  </div>
+
+  <!-- PROCESS / ITERATIONS -->
+  <div class="project-section">
+    <div class="section-label"><span class="section-num">02</span> Process & Iterations</div>
+    <p class="section-text">Rather than designing in isolation, I built a flexible visual system iteratively — testing each component against real product photography before locking the direction.</p>
+  </div>
+
+  <div class="project-section" style="margin-top: 2rem;">
+    <div class="iteration-row">
+      <div class="iteration-tag">Iteration 01</div>
+      <div class="iteration-text">First pass leaned heavily on bold typography overlays — tested well for impact but clashed with RUDSAK's quieter, premium brand voice. Scrapped in favor of more restrained layouts.</div>
+    </div>
+    <div class="iteration-row">
+      <div class="iteration-tag">Iteration 02</div>
+      <div class="iteration-text">Shifted to image-led compositions with minimal text — letting the outerwear's texture and craftsmanship carry the visual weight. Stakeholders responded strongly to this direction.</div>
+    </div>
+    <div class="iteration-row">
+      <div class="iteration-tag">Final Direction</div>
+      <div class="iteration-text">Combined the image-led approach with a consistent grid system and typography scale — applied across banners, product imagery, and UI components for full consistency.</div>
+    </div>
+  </div>
+
+  <!-- SOLUTION -->
+  <div class="project-section">
+    <div class="section-label"><span class="section-num">03</span> Solution</div>
+    <p class="section-text">I designed the outerwear category's <strong>complete digital asset library</strong> — product imagery, campaign banners, and reusable UI components for the e-commerce platform.</p>
+    <p class="section-text">Throughout, I collaborated cross-functionally with marketing and product teams to ensure every asset stayed consistent with the system, regardless of who was producing the next piece of content.</p>
+  </div>
+
+  <div class="gallery-grid">
+    <img src="https://images.unsplash.com/photo-1581291518633-83b4ebd1d83e?w=600&q=80" alt=""/>
+    <img src="https://images.unsplash.com/photo-1611162617213-7d7a39e9b1d7?w=600&q=80" alt=""/>
+    <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=600&q=80" alt=""/>
+  </div>
+
+  <!-- FINAL GALLERY -->
+  <div class="project-section">
+    <div class="section-label"><span class="section-num">04</span> Final Gallery</div>
+    <p class="section-text">The completed system in production — applied across seasonal campaign launches.</p>
+  </div>
+
+  <div class="gallery-grid two-col">
+    <img src="https://images.unsplash.com/photo-1503602642458-232111445657?w=900&q=80" alt=""/>
+    <img src="https://images.unsplash.com/photo-1556228720-195a672e8a03?w=900&q=80" alt=""/>
+  </div>
+
+  <!-- RESULTS -->
+  <div class="results-grid">
+    <div class="result-stat">
+      <div class="result-num">60<span>%</span></div>
+      <div class="result-label">Of Product Visual Range</div>
+    </div>
+    <div class="result-stat">
+      <div class="result-num">8</div>
+      <div class="result-label">Months Engagement</div>
+    </div>
+    <div class="result-stat">
+      <div class="result-num">100<span>%</span></div>
+      <div class="result-label">Cross-Channel Consistency</div>
+    </div>
+  </div>
+
+  <!-- LEARNINGS -->
+  <div class="project-section">
+    <div class="section-label"><span class="section-num">05</span> Learnings</div>
+  </div>
+  <div class="learnings-list">
+    <div class="learning-item">
+      <div class="learning-num">01</div>
+      <div class="learning-text">Restraint often reads as premium — the simplest direction outperformed the boldest one when tested with stakeholders.</div>
+    </div>
+    <div class="learning-item">
+      <div class="learning-num">02</div>
+      <div class="learning-text">Building a system (not just assets) meant other teams could extend the work themselves without losing consistency.</div>
+    </div>
+    <div class="learning-item">
+      <div class="learning-num">03</div>
+      <div class="learning-text">Early stakeholder research saved significant rework later — the disconnect was clear before a single asset was made.</div>
+    </div>
+  </div>
+
+  <!-- PREV / NEXT -->
+  <div class="project-nav">
+    <a class="project-nav-link prev" href="work-06.html" data-transition>
+      <span class="nav-direction">← Previous</span>
+      <span class="nav-project-title">Parto Ads — Brand Identity</span>
+    </a>
+    <a class="project-nav-link next" href="work-02.html" data-transition>
+      <span class="nav-direction">Next →</span>
+      <span class="nav-project-title">Boutique TAG — Retail UI</span>
+    </a>
+  </div>
+
+  <div class="project-end-space"></div>
+
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+<script src="../js/project.js"></script>
+</body>
+</html>

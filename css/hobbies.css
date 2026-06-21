@@ -1,0 +1,853 @@
+/* ============================================================
+   SOROUSH PORTFOLIO — hobbies.css
+   ============================================================ */
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html,
+body {
+  width: 100%;
+  height: 100%;
+  background: #0a0a0c;
+  color: #fff;
+  font-family: 'Inter', sans-serif;
+}
+
+#app {
+  width: 100%;
+  height: 100vh;
+  position: relative;
+  overflow: hidden;
+}
+
+#grain {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 0;
+  opacity: 0.45;
+}
+
+.grid {
+  position: absolute;
+  top: -20px;
+  left: -20px;
+  right: -20px;
+  bottom: -20px;
+  pointer-events: none;
+  z-index: 1;
+  background-image:
+    linear-gradient(#ffffff05 1px, transparent 1px),
+    linear-gradient(90deg, #ffffff05 1px, transparent 1px);
+  background-size: 200px 200px;
+  will-change: transform;
+}
+
+#grain {
+  will-change: transform;
+}
+
+/* ── NAV ── */
+nav {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 100;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 4rem;
+  height: 80px;
+  border-bottom: 1px solid #ffffff09;
+  background: #0a0a0c;
+}
+
+.nav-logo {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 2.6rem;
+  letter-spacing: .12em;
+  color: #fff;
+  cursor: pointer;
+}
+
+.nav-links {
+  display: flex;
+  gap: 2rem;
+}
+
+.nav-link {
+  font-family: 'DM Mono', monospace;
+  font-size: 14px;
+  letter-spacing: .16em;
+  text-transform: uppercase;
+  color: #888;
+  cursor: pointer;
+  transition: color .3s;
+  background: none;
+  border: none;
+}
+
+.nav-link:hover,
+.nav-link.active {
+  color: #fff;
+}
+
+.nav-cta {
+  font-family: 'DM Mono', monospace;
+  font-size: 14px;
+  letter-spacing: .14em;
+  text-transform: uppercase;
+  color: #f97316;
+  border: 1px solid #f9731644;
+  padding: .55rem 1.4rem;
+  cursor: pointer;
+  background: transparent;
+  transition: border-color .3s, background .3s;
+}
+
+.nav-cta:hover {
+  border-color: #f97316;
+  background: #f9731611;
+}
+
+.hamburger {
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  gap: 5px;
+  width: 40px;
+  height: 40px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 4px;
+  z-index: 200;
+}
+
+.hamburger span {
+  display: block;
+  width: 100%;
+  height: 1.5px;
+  background: #fff;
+  transition: all .3s;
+}
+
+.hamburger.open span:nth-child(1) {
+  transform: translateY(6.5px) rotate(45deg);
+}
+
+.hamburger.open span:nth-child(2) {
+  opacity: 0;
+}
+
+.hamburger.open span:nth-child(3) {
+  transform: translateY(-6.5px) rotate(-45deg);
+}
+
+.mobile-nav {
+  display: none;
+  position: fixed;
+  top: 60px;
+  left: 0;
+  right: 0;
+  background: #0a0a0cf0;
+  backdrop-filter: blur(20px);
+  border-bottom: 1px solid #ffffff0f;
+  flex-direction: column;
+  padding: .5rem 0 1rem;
+  z-index: 150;
+  pointer-events: none;
+  opacity: 0;
+  transform: translateY(-8px);
+  transition: opacity .25s, transform .25s;
+}
+
+.mobile-nav.open {
+  opacity: 1;
+  transform: translateY(0);
+  pointer-events: all;
+}
+
+.mobile-nav-link {
+  font-family: 'DM Mono', monospace;
+  font-size: 13px;
+  letter-spacing: .18em;
+  text-transform: uppercase;
+  color: #777;
+  background: none;
+  border: none;
+  padding: .9rem 1.5rem;
+  cursor: pointer;
+  text-align: left;
+  border-bottom: 1px solid #ffffff06;
+  transition: color .3s;
+  width: 100%;
+}
+
+.mobile-nav-link:last-child {
+  border-bottom: none;
+}
+
+.mobile-nav-link:hover,
+.mobile-nav-link.active {
+  color: #f97316;
+}
+
+/* ── SCROLLABLE PAGE ── */
+.page-scroll {
+  position: absolute;
+  top: 80px;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  overflow-y: auto;
+  overflow-x: hidden;
+  z-index: 6;
+  scrollbar-width: thin;
+  scrollbar-color: #f9731655 transparent;
+}
+
+.page-scroll::-webkit-scrollbar {
+  width: 5px;
+}
+
+.page-scroll::-webkit-scrollbar-thumb {
+  background: #f9731655;
+  border-radius: 3px;
+}
+
+/* ── HEADER ── */
+/* ── BOLD EDITORIAL HOBBIES SECTION ── */
+.hobbies-editorial {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2.5rem;
+  align-items: center;
+  padding: 3rem 4rem 2.5rem;
+  max-width: 1400px;
+  margin-left: auto;
+  margin-right: auto;
+  border-bottom: 1px solid #ffffff0c;
+  margin-bottom: 1.5rem;
+  position: relative;
+  overflow: hidden;
+}
+
+.editorial-glow {
+  position: absolute;
+  width: 420px;
+  height: 420px;
+  border-radius: 50%;
+  background: radial-gradient(circle, #f9731622, transparent 70%);
+  top: -120px;
+  left: 10%;
+  pointer-events: none;
+  z-index: 0;
+  filter: blur(10px);
+}
+
+.editorial-left,
+.editorial-right {
+  position: relative;
+  z-index: 1;
+}
+
+.editorial-left {
+  max-width: 480px;
+}
+
+.editorial-tag {
+  font-family: 'DM Mono', monospace;
+  font-size: 11px;
+  letter-spacing: .2em;
+  text-transform: uppercase;
+  color: #f97316;
+  margin-bottom: 1.2rem;
+}
+
+.editorial-title {
+  font-family: 'DM Serif Display', serif;
+  font-size: clamp(2.8rem, 6.5vw, 5.5rem);
+  line-height: .95;
+  letter-spacing: -.01em;
+  color: #f0ece4;
+  margin-bottom: 1.4rem;
+}
+
+.editorial-title em {
+  font-style: italic;
+  color: #f97316;
+}
+
+.editorial-text {
+  font-size: 14px;
+  font-weight: 300;
+  color: #999;
+  line-height: 1.8;
+  margin-bottom: 1.4rem;
+}
+
+.editorial-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: .5rem;
+}
+
+.editorial-pill {
+  font-family: 'DM Mono', monospace;
+  font-size: 10px;
+  letter-spacing: .1em;
+  text-transform: uppercase;
+  color: #f97316;
+  border: 1px solid #f9731644;
+  background: #f9731608;
+  padding: .35rem .9rem;
+  border-radius: 20px;
+}
+
+.editorial-right {
+  position: relative;
+  height: 360px;
+}
+
+.editorial-collage {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+.collage-img {
+  position: absolute;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 20px 50px #0008;
+}
+
+.collage-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.collage-1 {
+  width: 48%;
+  height: 60%;
+  top: 0;
+  left: 0;
+  z-index: 2;
+}
+
+.collage-2 {
+  width: 40%;
+  height: 45%;
+  top: 8%;
+  right: 0;
+  z-index: 1;
+}
+
+.collage-3 {
+  width: 38%;
+  height: 48%;
+  bottom: 0;
+  left: 10%;
+  z-index: 3;
+}
+
+.collage-4 {
+  width: 42%;
+  height: 42%;
+  bottom: 0;
+  right: 4%;
+  z-index: 1;
+}
+
+/* ── HOBBY SECTIONS (Movies, Gaming, Learning, Photography, Videography) ── */
+.hobby-section {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 3rem;
+  align-items: center;
+  padding: 3.5rem 4rem;
+  max-width: 1400px;
+  margin-left: auto;
+  margin-right: auto;
+  border-bottom: 1px solid #ffffff0c;
+}
+
+.hobby-section.reverse {
+  direction: rtl;
+}
+
+.hobby-section.reverse .hobby-img-wrap,
+.hobby-section.reverse .hobby-text-wrap {
+  direction: ltr;
+}
+
+.hobby-img-wrap {
+  width: 100%;
+  aspect-ratio: 4/3;
+  border-radius: 10px;
+  overflow: hidden;
+  transition: transform .4s ease, box-shadow .4s ease;
+}
+
+.hobby-img-wrap img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform .6s ease;
+}
+
+.hobby-section:hover .hobby-img-wrap {
+  transform: translateY(-4px);
+  box-shadow: 0 20px 50px #0006;
+}
+
+.hobby-section:hover .hobby-img-wrap img {
+  transform: scale(1.04);
+}
+
+.hobby-text-wrap {
+  max-width: 640px;
+}
+
+.hobby-num {
+  font-family: 'DM Mono', monospace;
+  font-size: 13px;
+  color: #f97316;
+  margin-bottom: .8rem;
+  letter-spacing: .1em;
+}
+
+.hobby-tag {
+  font-family: 'DM Mono', monospace;
+  font-size: 10.5px;
+  letter-spacing: .18em;
+  text-transform: uppercase;
+  color: #666;
+  margin-bottom: .6rem;
+}
+
+.hobby-title {
+  font-family: 'DM Serif Display', serif;
+  font-size: clamp(1.8rem, 3vw, 2.6rem);
+  color: #f0ece4;
+  letter-spacing: -.01em;
+  margin-bottom: 1rem;
+}
+
+.hobby-desc {
+  font-size: 16px;
+  font-weight: 300;
+  color: #999;
+  line-height: 1.85;
+}
+
+.hobby-ig-link {
+  display: inline-flex;
+  align-items: center;
+  gap: .5rem;
+  margin-top: 1.2rem;
+  font-family: 'DM Mono', monospace;
+  font-size: 12px;
+  letter-spacing: .05em;
+  text-decoration: none;
+  color: #f97316;
+  border-bottom: 1px solid #f9731644;
+  padding-bottom: .3rem;
+  transition: color .3s, border-color .3s;
+}
+
+.hobby-ig-link:hover {
+  color: #fff;
+  border-color: #f97316;
+}
+
+.ig-icon {
+  width: 15px;
+  height: 15px;
+  flex-shrink: 0;
+}
+
+/* ── ORIGINAL SIMPLE HEADER (kept below editorial section) ── */
+.hobbies-header {
+  padding: 3rem 4rem 2.5rem;
+  max-width: 700px;
+}
+
+.hobbies-eyebrow {
+  font-family: 'DM Mono', monospace;
+  font-size: 11px;
+  letter-spacing: .22em;
+  text-transform: uppercase;
+  color: #f97316;
+  display: flex;
+  align-items: center;
+  gap: .7rem;
+  margin-bottom: 1rem;
+}
+
+.hobbies-eyebrow::before {
+  content: '';
+  display: inline-block;
+  width: 28px;
+  height: 1px;
+  background: #f97316;
+}
+
+.hobbies-title {
+  font-family: 'DM Serif Display', serif;
+  font-size: clamp(2.4rem, 4.5vw, 3.6rem);
+  color: #f0ece4;
+  letter-spacing: -.02em;
+  margin-bottom: 1rem;
+}
+
+.hobbies-subtitle {
+  font-size: 14.5px;
+  font-weight: 300;
+  color: #999;
+  line-height: 1.8;
+}
+
+/* ── PHOTO GRID ── */
+.photo-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
+  padding: 0 4rem 2rem;
+  max-width: 1400px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.photo-item {
+  position: relative;
+  overflow: hidden;
+  border-radius: 6px;
+  aspect-ratio: 4/5;
+  cursor: pointer;
+}
+
+.photo-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform .5s ease, filter .4s ease;
+}
+
+.photo-item::after {
+  content: '⤢';
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background: #00000088;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 14px;
+  opacity: 0;
+  transition: opacity .3s;
+}
+
+.photo-item:hover img {
+  transform: scale(1.06);
+  filter: brightness(.85);
+}
+
+.photo-item:hover::after {
+  opacity: 1;
+}
+
+/* ── NOTE ── */
+.hobbies-note {
+  display: flex;
+  align-items: center;
+  gap: .6rem;
+  padding: 0 4rem 4rem;
+  max-width: 1400px;
+  margin-left: auto;
+  margin-right: auto;
+  font-family: 'DM Mono', monospace;
+  font-size: 11px;
+  color: #555;
+  letter-spacing: .03em;
+}
+
+.hobbies-note code {
+  background: #ffffff0a;
+  padding: .1rem .4rem;
+  border-radius: 3px;
+  color: #888;
+  font-family: 'DM Mono', monospace;
+}
+
+.note-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: #f97316;
+  flex-shrink: 0;
+}
+
+/* ── LIGHTBOX ── */
+.lightbox {
+  position: fixed;
+  inset: 0;
+  z-index: 300;
+  background: #000000ee;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+}
+
+.lightbox.open {
+  display: flex;
+}
+
+.lightbox-img {
+  max-width: 85vw;
+  max-height: 85vh;
+  border-radius: 6px;
+  box-shadow: 0 30px 80px #000a;
+}
+
+.lightbox-close {
+  position: absolute;
+  top: 2rem;
+  right: 2.5rem;
+  font-size: 32px;
+  color: #fff;
+  background: none;
+  border: none;
+  cursor: pointer;
+  line-height: 1;
+  opacity: .7;
+  transition: opacity .3s;
+}
+
+.lightbox-close:hover {
+  opacity: 1;
+  color: #f97316;
+}
+
+.lightbox-nav {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background: #ffffff0d;
+  border: 1px solid #ffffff1a;
+  color: #fff;
+  font-size: 20px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background .3s, border-color .3s;
+}
+
+.lightbox-nav:hover {
+  background: #f9731622;
+  border-color: #f97316;
+}
+
+.lightbox-nav.prev {
+  left: 2.5rem;
+}
+
+.lightbox-nav.next {
+  right: 2.5rem;
+}
+
+/* ============================================================
+   RESPONSIVE
+   ============================================================ */
+
+@media (max-width: 1024px) {
+  .hobby-section {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+    padding: 2.5rem 2rem;
+  }
+
+  .hobby-section.reverse {
+    direction: ltr;
+  }
+
+  .hobby-text-wrap {
+    max-width: 100%;
+  }
+
+  .hobbies-editorial {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+    padding: 2.5rem 2rem 2rem;
+  }
+
+  .editorial-right {
+    height: 280px;
+  }
+
+  .hobbies-header {
+    padding: 2.5rem 2rem 2rem;
+  }
+
+  .photo-grid {
+    padding: 0 2rem 2rem;
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .lightbox-nav {
+    width: 42px;
+    height: 42px;
+    font-size: 16px;
+  }
+
+  .lightbox-nav.prev {
+    left: 1.2rem;
+  }
+
+  .lightbox-nav.next {
+    right: 1.2rem;
+  }
+}
+
+@media (max-width: 768px) {
+  nav {
+    padding: 0 1.2rem;
+    height: 60px;
+  }
+
+  .nav-logo {
+    font-size: 1.8rem;
+  }
+
+  .nav-links {
+    display: none;
+  }
+
+  .nav-cta {
+    display: none;
+  }
+
+  .hamburger {
+    display: flex;
+  }
+
+  .mobile-nav {
+    display: flex;
+  }
+
+  .page-scroll {
+    top: 60px;
+  }
+
+  .hobby-section {
+    padding: 2rem 1.2rem;
+    gap: 1.2rem;
+  }
+
+  .hobby-title {
+    font-size: 1.6rem;
+  }
+
+  .hobby-desc {
+    font-size: 13px;
+  }
+
+  .hobby-num {
+    font-size: 11px;
+  }
+
+  .hobbies-editorial {
+    padding: 1.5rem 1.2rem;
+    margin-bottom: 1rem;
+  }
+
+  .editorial-title {
+    font-size: 2.4rem;
+  }
+
+  .editorial-text {
+    font-size: 13px;
+  }
+
+  .editorial-right {
+    height: 220px;
+  }
+
+  .hobbies-header {
+    padding: 2rem 1.2rem 1.5rem;
+  }
+
+  .hobbies-title {
+    font-size: 2.2rem;
+  }
+
+  .hobbies-subtitle {
+    font-size: 13px;
+  }
+
+  .photo-grid {
+    padding: 0 1.2rem 1.5rem;
+    grid-template-columns: repeat(2, 1fr);
+    gap: .7rem;
+  }
+
+  .hobbies-note {
+    padding: 0 1.2rem 3rem;
+    font-size: 10px;
+  }
+
+  .lightbox-img {
+    max-width: 92vw;
+    max-height: 70vh;
+  }
+
+  .lightbox-close {
+    top: 1.2rem;
+    right: 1.2rem;
+    font-size: 28px;
+  }
+
+  .lightbox-nav {
+    width: 38px;
+    height: 38px;
+    font-size: 15px;
+  }
+
+  .lightbox-nav.prev {
+    left: .8rem;
+  }
+
+  .lightbox-nav.next {
+    right: .8rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .photo-grid {
+    grid-template-columns: 1fr 1fr;
+    gap: .5rem;
+  }
+}

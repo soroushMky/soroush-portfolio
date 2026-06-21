@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Soroush — Project 02</title>
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Serif+Display:ital@0;1&family=Inter:wght@300;400;500;600&family=DM+Mono:wght@300;400;500&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="../css/project.css"/>
+</head>
+<body>
+<div id="app">
+  <canvas id="grain"></canvas>
+  <div class="grid"></div>
+  <nav>
+    <div class="nav-logo" onclick="goTo('index.html')">SOROUSH</div>
+    <div class="nav-links">
+      <button class="nav-link" onclick="goTo('index.html')">Home</button>
+      <button class="nav-link" onclick="goTo('about.html')">About</button>
+      <button class="nav-link active" onclick="goTo('work.html')">Work</button>
+      <button class="nav-link" onclick="goTo('hobbies.html')">Hobbies</button>
+      <button class="nav-link" onclick="goTo('contact.html')">Contact</button>
+    </div>
+    <button class="nav-cta" onclick="goTo('contact.html')">Hire Me</button>
+    <button class="hamburger" id="hamburger" onclick="toggleMenu()"><span></span><span></span><span></span></button>
+  </nav>
+  <div class="mobile-nav" id="mobileNav">
+    <button class="mobile-nav-link" onclick="goTo('index.html')">Home</button>
+    <button class="mobile-nav-link" onclick="goTo('about.html')">About</button>
+    <button class="mobile-nav-link active" onclick="goTo('work.html')">Work</button>
+    <button class="mobile-nav-link" onclick="goTo('hobbies.html')">Hobbies</button>
+    <button class="mobile-nav-link" onclick="goTo('contact.html')">Contact</button>
+    <button class="mobile-nav-link" onclick="goTo('contact.html')" style="color:#f97316;">Hire Me</button>
+  </div>
+  <a class="back-link" href="work.html" data-transition><span class="arrow">←</span> Back to Work</a>
+  <div class="project-hero">
+    <div class="project-eyebrow">Placeholder Project</div>
+    <h1 class="project-title">Project 02 — Coming Soon</h1>
+    <p class="project-subtitle">This case study is being written. Copy the structure from work-01.html (Creative) or work-03.html (Data) to build this one out.</p>
+  </div>
+  <div class="project-meta-bar">
+    <div class="meta-item"><span class="meta-label">Client</span><span class="meta-val">TBD</span></div>
+    <div class="meta-item"><span class="meta-label">Role</span><span class="meta-val">TBD</span></div>
+    <div class="meta-item"><span class="meta-label">Duration</span><span class="meta-val">TBD</span></div>
+    <div class="meta-item"><span class="meta-label">Tools</span><span class="meta-val">TBD</span></div>
+  </div>
+  <div class="project-end-space" style="height:8rem;"></div>
+</div>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+<script src="../js/project.js"></script>
+</body>
+</html>

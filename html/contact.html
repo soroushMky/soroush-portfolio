@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Soroush — Contact</title>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Serif+Display:ital@0;1&family=Inter:wght@300;400;500;600&family=DM+Mono:wght@300;400;500&display=swap"
+    rel="stylesheet" />
+  <link rel="stylesheet" href="../css/contact.css" />
+</head>
+
+<body>
+  <div id="app">
+
+    <canvas id="particleCanvas"></canvas>
+    <canvas id="grain"></canvas>
+    <div class="grid"></div>
+
+    <!-- NAV -->
+    <nav>
+      <div class="nav-logo" onclick="goTo('index.html')">SOROUSH</div>
+      <div class="nav-links">
+        <button class="nav-link" onclick="goTo('index.html')">Home</button>
+        <button class="nav-link" onclick="goTo('about.html')">About</button>
+        <button class="nav-link" onclick="goTo('work.html')">Work</button>
+        <button class="nav-link" onclick="goTo('hobbies.html')">Hobbies</button>
+        <button class="nav-link active">Contact</button>
+      </div>
+      <button class="nav-cta" onclick="goTo('contact.html')">Hire Me</button>
+      <button class="hamburger" id="hamburger" onclick="toggleMenu()"><span></span><span></span><span></span></button>
+    </nav>
+
+    <div class="mobile-nav" id="mobileNav">
+      <button class="mobile-nav-link" onclick="goTo('index.html')">Home</button>
+      <button class="mobile-nav-link" onclick="goTo('about.html')">About</button>
+      <button class="mobile-nav-link" onclick="goTo('work.html')">Work</button>
+      <button class="mobile-nav-link" onclick="goTo('hobbies.html')">Hobbies</button>
+      <button class="mobile-nav-link active">Contact</button>
+    </div>
+
+    <!-- CONTACT LAYOUT -->
+    <div class="contact-wrap">
+
+      <!-- LEFT — Intro + Socials -->
+      <div class="contact-left" id="cLeft">
+        <div class="contact-eyebrow">Get In Touch</div>
+        <h1 class="contact-headline">Let's build<br><em>something.</em></h1>
+        <p class="contact-text">
+          Whether you need a designer who can also read your data, or a team
+          looking for someone who bridges creativity and logic — I'd love to hear
+          about your project.
+        </p>
+
+        <div class="contact-direct">
+          <a href="mailto:soroush.merrikhy74@gmail.com" class="contact-email">
+            soroush.merrikhy74@gmail.com
+            <span class="email-arrow">↗</span>
+          </a>
+        </div>
+
+        <div class="socials-wrap">
+          <div class="socials-label">Find Me On</div>
+          <div class="socials-list">
+            <a href="https://linkedin.com/in/soroush-merikhy-a99875173" target="_blank" class="social-link">
+              <span class="social-name">LinkedIn</span>
+              <span class="social-arrow">↗</span>
+            </a>
+            <a href="https://github.com/soroushMky" target="_blank" class="social-link">
+              <span class="social-name">GitHub</span>
+              <span class="social-arrow">↗</span>
+            </a>
+            <a href="https://www.behance.net/soroushmerikhy" target="_blank" class="social-link">
+              <span class="social-name">Behance</span>
+              <span class="social-arrow">↗</span>
+            </a>
+            <a href="https://dribbble.com/Soroushmky" target="_blank" class="social-link">
+              <span class="social-name">Dribbble</span>
+              <span class="social-arrow">↗</span>
+            </a>
+            <a href="https://www.instagram.com/mr.mimdesigner/" target="_blank" class="social-link">
+              <span class="social-name">Instagram</span>
+              <span class="social-arrow">↗</span>
+            </a>
+          </div>
+        </div>
+
+        <div class="availability">
+          <span class="avail-dot"></span>
+          Available for freelance & full-time
+        </div>
+      </div>
+
+      <!-- RIGHT — Form -->
+      <div class="contact-right" id="cRight">
+        <form class="contact-form" id="contactForm" action="https://formspree.io/f/xrbeaopv" method="POST">
+
+          <div class="form-group">
+            <label for="name">Your Name</label>
+            <input type="text" id="name" name="name" placeholder="Jane Doe" required />
+          </div>
+
+          <div class="form-row">
+            <div class="form-group">
+              <label for="email">Email</label>
+              <input type="email" id="email" name="email" placeholder="jane@company.com" required />
+            </div>
+            <div class="form-group">
+              <label for="project-type">Project Type</label>
+              <select id="project-type" name="project-type">
+                <option value="design">Design Project</option>
+                <option value="data">Data / Analytics Project</option>
+                <option value="both">Both</option>
+                <option value="other">Other</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for="message">Message</label>
+            <textarea id="message" name="message" rows="6" placeholder="Tell me about your project..."
+              required></textarea>
+          </div>
+
+          <button type="submit" class="submit-btn">
+            <span class="submit-text">Send Message</span>
+            <span class="submit-arrow">→</span>
+          </button>
+
+          <div class="form-success" id="formSuccess">
+            <span class="success-icon">✓</span> Message sent — I'll get back to you soon!
+          </div>
+        </form>
+      </div>
+
+    </div>
+
+  </div>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="../js/contact.js"></script>
+</body>
+
+</html>
