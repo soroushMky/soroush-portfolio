@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Soroush — MediFlow</title>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Serif+Display:ital@0;1&family=Inter:wght@300;400;500;600&family=DM+Mono:wght@300;400;500&display=swap"
+    rel="stylesheet" />
+  <link rel="stylesheet" href="../css/project.css" />
+</head>
+
+<body>
+  <div id="app">
+
+    <canvas id="grain"></canvas>
+    <div class="grid"></div>
+
+    <nav>
+      <div class="nav-logo" onclick="goTo('index.html')">SOROUSH</div>
+      <div class="nav-links">
+        <button class="nav-link" onclick="goTo('index.html')">Home</button>
+        <button class="nav-link" onclick="goTo('about.html')">About</button>
+        <button class="nav-link active" onclick="goTo('work.html')">Work</button>
+        <button class="nav-link" onclick="goTo('hobbies.html')">Hobbies</button>
+        <button class="nav-link" onclick="goTo('contact.html')">Contact</button>
+      </div>
+      <button class="nav-cta" onclick="goTo('contact.html')">Hire Me</button>
+      <button class="hamburger" id="hamburger" onclick="toggleMenu()"><span></span><span></span><span></span></button>
+    </nav>
+
+    <div class="mobile-nav" id="mobileNav">
+      <button class="mobile-nav-link" onclick="goTo('index.html')">Home</button>
+      <button class="mobile-nav-link" onclick="goTo('about.html')">About</button>
+      <button class="mobile-nav-link active" onclick="goTo('work.html')">Work</button>
+      <button class="mobile-nav-link" onclick="goTo('hobbies.html')">Hobbies</button>
+      <button class="mobile-nav-link" onclick="goTo('contact.html')">Contact</button>
+      <button class="mobile-nav-link" onclick="goTo('contact.html')" style="color:#f97316;">Hire Me</button>
+    </div>
+
+    <a class="back-link" href="work.html" data-transition><span class="arrow">←</span> Back to Work</a>
+
+    <div class="project-hero">
+      <div class="project-eyebrow">UX Case Study · Product Design</div>
+      <h1 class="project-title">MediFlow — Trust, Not Just Speed</h1>
+      <p class="project-subtitle">AI scribes for therapists got fast. Almost none of them got trustworthy. MediFlow
+        starts from a different question: what would it actually take for a clinician to trust a note he didn't write,
+        without rereading the whole thing?</p>
+    </div>
+
+    <div class="project-meta-bar">
+      <div class="meta-item"><span class="meta-label">Role</span><span class="meta-val">Solo Product Designer</span>
+      </div>
+      <div class="meta-item"><span class="meta-label">Scope</span><span class="meta-val">Research · Flow Mapping · UI ·
+          Motion</span></div>
+      <div class="meta-item"><span class="meta-label">Timeline</span><span class="meta-val">1-week focused sprint</span>
+      </div>
+      <div class="meta-item"><span class="meta-label">Tools</span><span class="meta-val">Figma · HTML/CSS/JS · Three.js
+          · React</span></div>
+    </div>
+
+    <div class="project-hero-img" style="height:auto; max-height:none; overflow:visible;">
+      <img src="../images/work/mediflow/banner.jpg" alt="MediFlow cover"
+        style="width:100%; height:auto; max-height:none; object-fit:contain; display:block;" />
+    </div>
+
+    <!-- INTRO / DECISION -->
+    <div class="project-section">
+      <div class="section-label"><span class="section-num">—</span> The Question That Defines This Project</div>
+      <p class="section-text">Most AI documentation tools optimize for one thing: how fast can a draft appear. I started
+        from a different question entirely — <strong>what would it actually take for a clinician to trust a note he
+          didn't write himself, without rereading the whole thing?</strong> That reframing is the entire design
+        rationale behind MediFlow's Trust Layer, and it's why this case study leads with verification, not generation.
+      </p>
+    </div>
+
+    <!-- THE PROBLEM -->
+    <div class="project-section">
+      <div class="section-label"><span class="section-num">01</span> The Problem</div>
+      <p class="section-text">It started with a complaint I kept hearing. A therapist I know would come home most
+        evenings and spend the time he should've had to himself finishing patient notes instead. He'd started using an
+        AI tool to draft them — fast, but he was never quite sure if what it wrote was actually right, so he ended up
+        checking everything line by line anyway.</p>
+      <p class="section-text">The tool was supposed to save him time. Instead, it just moved the work from
+        <em>writing</em> to <em>double-checking</em>. That's the whole problem in one sentence: AI scribes have gotten
+        fast. Almost none of them got trustworthy.</p>
+    </div>
+
+    <!-- RESEARCH -->
+    <div class="project-section">
+      <div class="section-label"><span class="section-num">02</span> The Research</div>
+      <p class="section-text">I looked at how the major AI documentation tools for therapists handle the one moment
+        where trust is either built or lost: the review. Mentalyc is purpose-built for therapists with strong privacy,
+        but treatment planning stays largely static. Upheal is popular with a free tier, but struggles with speaker
+        identification and occasional fabricated dialogue. Eleos is strong for large clinics with supervision
+        dashboards, but overkill for a solo clinician. Blueprint ties notes to standardized assessments well, but can
+        feel repetitive. TherapyNotes is built into an EHR clinicians already use, but note quality still depends
+        heavily on manual edits.</p>
+      <p class="section-text"><strong>The gap:</strong> almost every tool solves drafting a single session well. Almost
+        none of them solve continuity — keeping a patient's problems, progress, and history connected across sessions,
+        the way a therapist actually has to think. Mentalyc calls this the "golden thread" and treats it as a premium
+        feature, which tells you it's rare, not standard.</p>
+    </div>
+
+    <div class="project-image-block">
+      <img src="../images/work/mediflow/competitive-comparison.png"
+        alt="Competitive analysis of AI documentation tools for therapists" />
+      <div class="image-caption">Every competitor solves drafting. Almost none solve continuity across sessions — the
+        gap MediFlow targets directly.</div>
+    </div>
+
+    <!-- FOUR PILLARS -->
+    <div class="project-section">
+      <div class="section-label"><span class="section-num">03</span> The Four Pillars — Three Real, One Deliberately
+        Marked as a Sketch</div>
+      <p class="section-text">Three of these are fully designed and built. The fourth is included on purpose, but
+        clearly labeled as a concept — I'd rather show you where the honest edge of this project is than blur it.</p>
+      <p class="section-text"><strong>Trust Layer.</strong> Tap any line in the note, see the exact transcript moment it
+        came from. Verification becomes a 2-second tap instead of a full reread — this is the direct answer to the
+        problem statement above.</p>
+      <p class="section-text"><strong>Relief Moment.</strong> Signing off shows a quiet acknowledgment — time saved
+        versus your average — turning documentation from a chore into a small, earned checkpoint.</p>
+      <p class="section-text"><strong>Problem Tracking.</strong> Every problem a patient has ever mentioned lives in one
+        place, marked resolved or ongoing. This is the direct answer to the continuity gap the research surfaced.</p>
+      <p class="section-text"><strong>Predictive Teaser</strong> <em>(concept only, not a real model).</em> A soft
+        burnout trend and follow-up suggestion. I'm showing this deliberately as a sketch of a future direction, not a
+        validated feature — there's no real model behind it, and presenting it as equal to the other three would be
+        dishonest about what's actually built.</p>
+    </div>
+
+    <div class="project-image-block">
+      <img src="../images/work/mediflow/four-pillars.svg" alt="Four pillars diagram" />
+    </div>
+
+    <!-- USER FLOW -->
+    <div class="project-section">
+      <div class="section-label"><span class="section-num">04</span> User Flow</div>
+      <p class="section-text">The main loop repeats every visit: <strong>Draft Review → Sign-off → Note Filed → Patient
+          Profile</strong>, then back to Draft Review for the next patient. Scheduling sits outside that loop entirely —
+        it's a utility accessible anytime, not tied to a single visit.</p>
+      <p class="section-text">A real design decision worth calling out: when the AI flags something missing — a vitals
+        reading, a follow-up date — it <strong>does not block sign-off.</strong> The flag travels forward into Sign-off,
+        into Note Filed, as a visible to-do, instead of halting the clinician's day over an honest gap in the
+        information. Blocking would have been the "safer" default; I chose not to, because a tool that stops a therapist
+        mid-day over a missing field stops getting used.</p>
+    </div>
+
+    <div class="project-image-block">
+      <img src="../images/work/mediflow/clinician-flow.svg" alt="Clinician flow diagram" />
+    </div>
+
+    <!-- SCREENS -->
+    <div class="project-section">
+      <div class="section-label"><span class="section-num">05</span> Draft Review</div>
+      <p class="section-text">The core of the Trust Layer. Tap any line to reveal its source, see a live accuracy score,
+        confirm or flag lines individually — verification as a glance, not a reread.</p>
+    </div>
+
+    <div class="project-image-block">
+      <img src="../images/work/mediflow/draft-review.png" alt="Draft Review screen" />
+    </div>
+
+    <div class="project-section">
+      <div class="section-label"><span class="section-num">06</span> Sign-off</div>
+      <p class="section-text">The Relief Moment — a verification checklist, the session-time comparison, and the
+        finalize action.</p>
+    </div>
+
+    <div class="project-image-block">
+      <img src="../images/work/mediflow/sign-off.png" alt="Sign-off screen" />
+    </div>
+
+    <div class="project-section">
+      <div class="section-label"><span class="section-num">07</span> Note Filed</div>
+      <p class="section-text">Confirms the note is committed, and shows exactly which flagged items carried forward as
+        action items — the visible trail from the no-block decision above.</p>
+    </div>
+
+    <div class="project-image-block">
+      <img src="../images/work/mediflow/note-filed.png" alt="Note Filed screen" />
+    </div>
+
+    <div class="project-section">
+      <div class="section-label"><span class="section-num">08</span> Patient Profile</div>
+      <p class="section-text">Appointment history, problem tracking with resolved/ongoing toggles, prescriptions, and
+        pre-visit notes — the home of the continuity the research said was missing industry-wide.</p>
+    </div>
+
+    <div class="project-image-block">
+      <img src="../images/work/mediflow/patient-profile.png" alt="Patient Profile screen" />
+    </div>
+
+    <div class="project-section">
+      <div class="section-label"><span class="section-num">09</span> Scheduling</div>
+      <p class="section-text">Today's appointments, with real cancel/restore actions and a working booking form —
+        deliberately built as a standalone utility, not bolted into the visit loop.</p>
+    </div>
+
+    <div class="project-image-block">
+      <img src="../images/work/mediflow/scheduling.png" alt="Scheduling screen" />
+    </div>
+
+    <!-- DESIGN SYSTEM -->
+    <div class="project-section">
+      <div class="section-label"><span class="section-num">10</span> Design System</div>
+      <p class="section-text">A dark, glass-material aesthetic — frosted panels over an animated network background,
+        with a deliberately restrained two-color palette doing all the semantic work. No third accent color anywhere in
+        the product: blue means primary action, green means resolved or confirmed, and that's the entire vocabulary.</p>
+      <p class="section-text">Typography splits by intent: Plus Jakarta Sans for UI text, IBM Plex Mono for data labels
+        and timestamps — anything meant to read as a precise system value rather than prose. Every card uses a layered
+        "liquid glass" treatment — backdrop blur, a soft top-edge highlight, a diagonal glossy sheen — rather than a
+        flat tinted box.</p>
+      <p class="section-text">The background itself is a live Three.js particle network rather than a static image — a
+        deliberate choice to make the "trust as a system, not a single feature" idea felt ambiently, even before a
+        clinician reads a word of the UI.</p>
+    </div>
+
+    <!-- TECH / WHAT'S REAL -->
+    <div class="project-section">
+      <div class="section-label"><span class="section-num">11</span> What's Actually Real</div>
+      <p class="section-text">Built as a dependency-free HTML/CSS/JS version and a parallel React port — same design
+        system, same logic, idiomatic component structure in both. No backend, no real AI model, no database; this is a
+        front-end prototype, and I'd rather say that plainly than let the polish imply otherwise.</p>
+      <p class="section-text"><strong>Built:</strong> all five screens, full navigation, the Trust Layer interaction,
+        problem-status toggles, a working client-side booking form.</p>
+      <p class="section-text"><strong>Conceptual, not real:</strong> the Predictive Teaser card — no actual model behind
+        the burnout trend or follow-up suggestion.</p>
+      <p class="section-text"><strong>Next, if this became a real product:</strong> validate the evidence-linking
+        pattern with real clinicians, prototype an actual predictive model against real outcome data, usability-test the
+        gap-flagging tone so it reads as supportive rather than punitive, and replace the client-side booking form with
+        a real backend.</p>
+    </div>
+
+    <!-- LEARNINGS / NEXT -->
+    <div class="learnings-list">
+      <div class="learning-item">
+        <div class="learning-num">01</div>
+        <div class="learning-text">The research question mattered more than the feature list. Starting from "what makes
+          a note trustworthy" instead of "how do we draft faster" is the single decision that shaped every screen after
+          it.</div>
+      </div>
+      <div class="learning-item">
+        <div class="learning-num">02</div>
+        <div class="learning-text">Not blocking sign-off on a flagged gap was the harder, less obvious call — and the
+          one I'd defend hardest in an interview, because the safer-looking choice would have made the product worse to
+          actually use.</div>
+      </div>
+      <div class="learning-item">
+        <div class="learning-num">03</div>
+        <div class="learning-text">Labeling the Predictive Teaser as a sketch, not a fourth equal pillar, was a
+          deliberate choice to keep the case study honest about what's validated and what's a future direction.</div>
+      </div>
+    </div>
+
+    <!-- PREV / NEXT -->
+    <div class="project-nav">
+      <a class="project-nav-link prev" href="work-07.html" data-transition>
+        <span class="nav-direction">← Previous</span>
+        <span class="nav-project-title">SwiftWash — Laundry, Without the Guesswork</span>
+      </a>
+      <a class="project-nav-link next" href="work-01.html" data-transition>
+        <span class="nav-direction">Next →</span>
+        <span class="nav-project-title">RUDSAK — Outerwear Campaign</span>
+      </a>
+    </div>
+
+    <div class="project-end-space"></div>
+
+  </div>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="../js/project.js"></script>
+</body>
+
+</html>

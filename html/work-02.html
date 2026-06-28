@@ -1,51 +1,263 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-  <meta charset="UTF-8"/>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Soroush — Project 02</title>
-  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Serif+Display:ital@0;1&family=Inter:wght@300;400;500;600&family=DM+Mono:wght@300;400;500&display=swap" rel="stylesheet"/>
-  <link rel="stylesheet" href="../css/project.css"/>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Soroush — MediFlow</title>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Serif+Display:ital@0;1&family=Inter:wght@300;400;500;600&family=DM+Mono:wght@300;400;500&display=swap"
+    rel="stylesheet" />
+  <link rel="stylesheet" href="../css/project.css" />
 </head>
+
 <body>
-<div id="app">
-  <canvas id="grain"></canvas>
-  <div class="grid"></div>
-  <nav>
-    <div class="nav-logo" onclick="goTo('index.html')">SOROUSH</div>
-    <div class="nav-links">
-      <button class="nav-link" onclick="goTo('index.html')">Home</button>
-      <button class="nav-link" onclick="goTo('about.html')">About</button>
-      <button class="nav-link active" onclick="goTo('work.html')">Work</button>
-      <button class="nav-link" onclick="goTo('hobbies.html')">Hobbies</button>
-      <button class="nav-link" onclick="goTo('contact.html')">Contact</button>
+  <div id="app">
+
+    <canvas id="grain"></canvas>
+    <div class="grid"></div>
+
+    <nav>
+      <div class="nav-logo" onclick="goTo('index.html')">SOROUSH</div>
+      <div class="nav-links">
+        <button class="nav-link" onclick="goTo('index.html')">Home</button>
+        <button class="nav-link" onclick="goTo('about.html')">About</button>
+        <button class="nav-link active" onclick="goTo('work.html')">Work</button>
+        <button class="nav-link" onclick="goTo('hobbies.html')">Hobbies</button>
+        <button class="nav-link" onclick="goTo('contact.html')">Contact</button>
+      </div>
+      <button class="nav-cta" onclick="goTo('contact.html')">Hire Me</button>
+      <button class="hamburger" id="hamburger" onclick="toggleMenu()"><span></span><span></span><span></span></button>
+    </nav>
+
+    <div class="mobile-nav" id="mobileNav">
+      <button class="mobile-nav-link" onclick="goTo('index.html')">Home</button>
+      <button class="mobile-nav-link" onclick="goTo('about.html')">About</button>
+      <button class="mobile-nav-link active" onclick="goTo('work.html')">Work</button>
+      <button class="mobile-nav-link" onclick="goTo('hobbies.html')">Hobbies</button>
+      <button class="mobile-nav-link" onclick="goTo('contact.html')">Contact</button>
+      <button class="mobile-nav-link" onclick="goTo('contact.html')" style="color:#f97316;">Hire Me</button>
     </div>
-    <button class="nav-cta" onclick="goTo('contact.html')">Hire Me</button>
-    <button class="hamburger" id="hamburger" onclick="toggleMenu()"><span></span><span></span><span></span></button>
-  </nav>
-  <div class="mobile-nav" id="mobileNav">
-    <button class="mobile-nav-link" onclick="goTo('index.html')">Home</button>
-    <button class="mobile-nav-link" onclick="goTo('about.html')">About</button>
-    <button class="mobile-nav-link active" onclick="goTo('work.html')">Work</button>
-    <button class="mobile-nav-link" onclick="goTo('hobbies.html')">Hobbies</button>
-    <button class="mobile-nav-link" onclick="goTo('contact.html')">Contact</button>
-    <button class="mobile-nav-link" onclick="goTo('contact.html')" style="color:#f97316;">Hire Me</button>
+
+    <a class="back-link" href="work.html" data-transition><span class="arrow">←</span> Back to Work</a>
+
+    <div class="project-hero">
+      <div class="project-eyebrow">UX Concept · AI-Assisted Healthcare</div>
+      <h1 class="project-title">MediFlow — Trust, Not Just Speed, in AI Clinical Documentation</h1>
+      <p class="project-subtitle">A concept clinical-documentation tool for therapists and physicians, designed around
+        one constraint: an AI-generated note is only useful if the clinician signing it can verify it faster than they
+        could write it from scratch.</p>
+    </div>
+
+    <div class="project-meta-bar">
+      <div class="meta-item"><span class="meta-label">Role</span><span class="meta-val">Solo Designer · Concept</span>
+      </div>
+      <div class="meta-item"><span class="meta-label">Scope</span><span class="meta-val">UX Design · Interaction Design
+          ·
+          Prototype</span></div>
+      <div class="meta-item"><span class="meta-label">Tools</span><span class="meta-val">Figma · HTML/CSS/JS</span>
+      </div>
+      <div class="meta-item"><span class="meta-label">Repo</span><span class="meta-val"><a
+            href="https://github.com/soroushMky/mediflow-app" target="_blank"
+            style="color:#f97316;text-decoration:none;border-bottom:1px solid #f9731644;">soroushMky/mediflow-app
+            ↗</a></span></div>
+    </div>
+
+    <div class="project-hero-img">
+      <img src="../images/work/mediflow/banner.svg" alt="MediFlow draft review screen" />
+    </div>
+
+    <!-- THE DECISION -->
+    <div class="project-section">
+      <div class="section-label"><span class="section-num">—</span> The Decision That Defines This Project</div>
+      <p class="section-text">AI scribes sell themselves on speed. I designed MediFlow around the opposite priority:
+        <strong>every AI-generated line had to be falsifiable</strong> by the clinician signing it, not just fast to
+        click through. Speed that comes from clinicians stopping to actually verify, not from them giving up on
+        verification, is the only kind of speed that's safe to ship in a clinical record.
+      </p>
+    </div>
+
+    <!-- THE PROBLEM -->
+    <div class="project-section">
+      <div class="section-label"><span class="section-num">01</span> The Problem</div>
+      <p class="section-text">A clinician remains legally and ethically accountable for whatever they sign, AI-drafted
+        or not. A black-box AI note creates a bad fork: either the clinician re-verifies everything line by line — which
+        erases the time savings the tool was supposed to provide — or they stop verifying and start rubber-stamping,
+        which is a liability and patient-safety risk hiding behind a confidence percentage.</p>
+      <p class="section-text">MediFlow's entire interaction model exists to avoid that fork: make verification fast
+        enough that clinicians actually do it, every time.</p>
+    </div>
+
+    <div class="tech-stack-row">
+      <div class="tech-pill">Figma</div>
+      <div class="tech-pill">HTML5</div>
+      <div class="tech-pill">CSS3</div>
+      <div class="tech-pill">JavaScript</div>
+      <div class="tech-pill">Netlify</div>
+    </div>
+
+    <!-- DRAFT REVIEW -->
+    <div class="project-section">
+      <div class="section-label"><span class="section-num">02</span> Draft Review — Verification at the Line Level</div>
+      <p class="section-text">Instead of one aggregate "92% confident" badge sitting over an entire note, every SOAP
+        section — Subjective, Objective, Assessment, Plan — carries its own status. Each line links to a
+        <strong>timestamped source quote</strong> from the session audio, so the clinician isn't asked to trust the
+        model's summary — they're shown exactly what the patient said and can judge the leap themselves.
+      </p>
+      <p class="section-text">Lines that need a second look are flagged explicitly (<strong>"Needs review"</strong> on
+        the Assessment line in the screenshot below) rather than buried in a single score. A visible progress meter —
+        <strong>3 of 4 lines, 75% confirmed</strong> — turns "did I actually check this" into something the clinician
+        can see, not something they have to remember.
+      </p>
+    </div>
+
+    <div class="project-image-block">
+      <img src="../images/work/mediflow/draft-review.png"
+        alt="Draft review screen with per-line confidence and source quotes" />
+    </div>
+
+    <!-- SIGN-OFF -->
+    <div class="project-section">
+      <div class="section-label"><span class="section-num">03</span> Sign-off — A Deliberate Last Step</div>
+      <p class="section-text">Once every line is confirmed, the note moves to sign-off — a separate screen, not a
+        single extra click on draft review. Billing, medication reconciliation, and follow-up scheduling are shown as a
+        checklist alongside the finalized note, with the signature itself left as the one item still
+        <strong>pending</strong> until the clinician deliberately confirms.
+      </p>
+      <p class="section-text"><strong>"Modify draft"</strong> and <strong>"Confirm & sign off"</strong> are kept as two
+        clearly separate actions, not a single "approve" button — a legal clinical record shouldn't be one accidental
+        tap away from being locked.</p>
+    </div>
+
+    <div class="project-image-block">
+      <img src="../images/work/mediflow/sign-off.png"
+        alt="Sign-off screen with checklist and session time comparison" />
+    </div>
+
+    <!-- NOTE FILED -->
+    <div class="project-section">
+      <div class="section-label"><span class="section-num">04</span> Note Filed — Where the Speed Actually Shows Up
+      </div>
+      <p class="section-text">Trust is front-loaded into draft review and sign-off; the payoff shows up here. This
+        session closed out in <strong>4m 12s</strong> against the clinician's own average of <strong>6m 45s</strong> —
+        a <strong>38% reduction</strong> — without skipping a single verification step. The filed note carries a
+        reference ID, document type, and any carried-over action items for next time, so nothing from this session gets
+        silently dropped before the next visit.</p>
+    </div>
+
+    <div class="project-image-block">
+      <img src="../images/work/mediflow/note-filed.png" alt="Note filed confirmation screen with efficiency stat" />
+    </div>
+
+    <!-- SUPPORTING SCREENS -->
+    <div class="project-section">
+      <div class="section-label"><span class="section-num">05</span> The Rest of the Workflow</div>
+      <p class="section-text">A clinical tool isn't just the AI moment — it's also the patient's history and the
+        clinician's day. <strong>Patient profile</strong> surfaces appointment history, tracked problems (clearly
+        separated into Resolved vs. Ongoing), active prescriptions, and a pre-visit notes field so context is loaded
+        before the session starts, not reconstructed during it.</p>
+    </div>
+
+    <div class="project-image-block">
+      <img src="../images/work/mediflow/patient-profile.png"
+        alt="Patient profile screen with history, problems tracked, and prescriptions" />
+    </div>
+
+    <div class="project-section">
+      <p class="section-text"><strong>Scheduling</strong> keeps the same plain, checklist-style language as the rest of
+        the app — today's appointments, available slots, and a waitlist — rather than introducing a separate visual
+        language for a screen the clinician might only glance at between sessions.</p>
+    </div>
+
+    <div class="project-image-block">
+      <img src="../images/work/mediflow/scheduling.png"
+        alt="Scheduling screen with today's appointments and booking form" />
+    </div>
+
+    <!-- KEY DECISIONS -->
+    <div class="project-section">
+      <div class="section-label"><span class="section-num">06</span> Key UX Decisions</div>
+      <p class="section-text"><strong>Why per-line confidence instead of one score?</strong> A single 92% tells a
+        clinician nothing about where to spend their attention. Four scores tell them exactly which line to slow down
+        on.</p>
+      <p class="section-text"><strong>Why timestamped source quotes?</strong> "Trust the AI" isn't an option in a
+        clinical record — "verify against the transcript in two seconds" is. The source quote turns every AI claim into
+        something falsifiable instead of something asserted.</p>
+      <p class="section-text"><strong>Why lock the note after sign-off?</strong> Real clinical documentation needs an
+        audit trail. Once a note is signed, it should behave like a signed document — editable only through an explicit
+        amendment path, not a quiet inline edit.</p>
+      <p class="section-text"><strong>Why split "Modify draft" from "Confirm & sign off"?</strong> The cost of an
+        accidental finalize on a legal medical record is much higher than the cost of one extra click — the UI should
+        reflect that asymmetry.</p>
+    </div>
+
+    <!-- RESULTS -->
+    <div class="results-grid">
+      <div class="result-stat">
+        <div class="result-num">38<span>%</span></div>
+        <div class="result-label">Faster Sign-off (4m12s vs. 6m45s avg)</div>
+      </div>
+      <div class="result-stat">
+        <div class="result-num">4</div>
+        <div class="result-label">Connected Workflow Screens</div>
+      </div>
+      <div class="result-stat">
+        <div class="result-num">92<span>%</span></div>
+        <div class="result-label">Draft Confidence, Surfaced Per Line</div>
+      </div>
+    </div>
+
+    <!-- LEARNINGS -->
+    <div class="project-section">
+      <div class="section-label"><span class="section-num">07</span> What I Learned</div>
+    </div>
+    <div class="learnings-list">
+      <div class="learning-item">
+        <div class="learning-num">01</div>
+        <div class="learning-text"><strong>Trust is a UX problem before it's a model problem.</strong> Line-level
+          verification redistributes trust across a note instead of asking a clinician for blanket faith in one
+          number.</div>
+      </div>
+      <div class="learning-item">
+        <div class="learning-num">02</div>
+        <div class="learning-text"><strong>Ambiguity costs more in healthcare UI than almost anywhere else.</strong>
+          Every status needed an explicit label — "Needs review," "Confirmed," "Signature pending" — color alone
+          wasn't an acceptable signal.</div>
+      </div>
+      <div class="learning-item">
+        <div class="learning-num">03</div>
+        <div class="learning-text"><strong>The supporting screens carry real weight.</strong> Patient profile and
+          scheduling aren't the exciting part of an "AI scribe" pitch, but a tool that nails draft review and
+          neglects them isn't actually usable in a real clinical day.</div>
+      </div>
+    </div>
+
+    <!-- ROADMAP -->
+    <div class="project-section">
+      <div class="section-label"><span class="section-num">08</span> Roadmap</div>
+      <p class="section-text">Next: a structured amendment flow for signed notes (rather than re-opening the original),
+        real FHIR-aligned data modeling for patient records, an accessibility pass aimed specifically at clinical
+        environments, and user testing with practicing clinicians to validate whether the verification model actually
+        holds up against real documentation habits — not just against my own assumptions.</p>
+    </div>
+
+    <div class="project-nav">
+      <a class="project-nav-link prev" href="work-07.html" data-transition>
+        <span class="nav-direction">← Previous</span>
+        <span class="nav-project-title">SwiftWash — Laundry App</span>
+      </a>
+      <a class="project-nav-link next" href="work-03.html" data-transition>
+        <span class="nav-direction">Next →</span>
+        <span class="nav-project-title">Nomi — AI Finance Analyzer</span>
+      </a>
+    </div>
+
+    <div class="project-end-space"></div>
+
   </div>
-  <a class="back-link" href="work.html" data-transition><span class="arrow">←</span> Back to Work</a>
-  <div class="project-hero">
-    <div class="project-eyebrow">Placeholder Project</div>
-    <h1 class="project-title">Project 02 — Coming Soon</h1>
-    <p class="project-subtitle">This case study is being written. Copy the structure from work-01.html (Creative) or work-03.html (Data) to build this one out.</p>
-  </div>
-  <div class="project-meta-bar">
-    <div class="meta-item"><span class="meta-label">Client</span><span class="meta-val">TBD</span></div>
-    <div class="meta-item"><span class="meta-label">Role</span><span class="meta-val">TBD</span></div>
-    <div class="meta-item"><span class="meta-label">Duration</span><span class="meta-val">TBD</span></div>
-    <div class="meta-item"><span class="meta-label">Tools</span><span class="meta-val">TBD</span></div>
-  </div>
-  <div class="project-end-space" style="height:8rem;"></div>
-</div>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
-<script src="../js/project.js"></script>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="../js/project.js"></script>
 </body>
+
 </html>

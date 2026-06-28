@@ -1,0 +1,52 @@
+<svg width="900" height="280" viewBox="0 0 900 280" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="The four design pillars">
+  <rect width="900" height="280" fill="#ffffff"/>
+
+  <g font-family="Segoe UI, Helvetica, Arial, sans-serif">
+
+    <!-- Pillar 1 -->
+    <rect x="30" y="30" width="195" height="220" rx="14" fill="#EAF2FF" stroke="#4C8DFF" stroke-width="1.2"/>
+    <circle cx="70" cy="70" r="16" fill="#4C8DFF"/>
+    <path d="M62 70l5 5 9-11" fill="none" stroke="#ffffff" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/>
+    <text x="50" y="108" font-size="15" font-weight="700" fill="#1F2937">Trust Layer</text>
+    <text x="50" y="132" font-size="12" fill="#4B5563">Tap any line in the</text>
+    <text x="50" y="150" font-size="12" fill="#4B5563">note to see the exact</text>
+    <text x="50" y="168" font-size="12" fill="#4B5563">moment it came from.</text>
+    <text x="50" y="186" font-size="12" fill="#4B5563">Verify in seconds,</text>
+    <text x="50" y="204" font-size="12" fill="#4B5563">not a full reread.</text>
+
+    <!-- Pillar 2 -->
+    <rect x="245" y="30" width="195" height="220" rx="14" fill="#EAF2FF" stroke="#4C8DFF" stroke-width="1.2"/>
+    <circle cx="285" cy="70" r="16" fill="#4C8DFF"/>
+    <path d="M278 70a7 7 0 1014 0a7 7 0 00-14 0" fill="none" stroke="#ffffff" stroke-width="2.2"/>
+    <path d="M285 63v7l5 3" fill="none" stroke="#ffffff" stroke-width="2.2" stroke-linecap="round"/>
+    <text x="265" y="108" font-size="15" font-weight="700" fill="#1F2937">Relief Moment</text>
+    <text x="265" y="132" font-size="12" fill="#4B5563">Signing off shows a</text>
+    <text x="265" y="150" font-size="12" fill="#4B5563">quiet acknowledgment —</text>
+    <text x="265" y="168" font-size="12" fill="#4B5563">time saved vs. average —</text>
+    <text x="265" y="186" font-size="12" fill="#4B5563">turning a chore into a</text>
+    <text x="265" y="204" font-size="12" fill="#4B5563">small earned checkpoint.</text>
+
+    <!-- Pillar 3 -->
+    <rect x="460" y="30" width="195" height="220" rx="14" fill="#EAF6EF" stroke="#1E8F5C" stroke-width="1.2"/>
+    <circle cx="500" cy="70" r="16" fill="#1E8F5C"/>
+    <path d="M493 75l5-10 4 5 5-8" fill="none" stroke="#ffffff" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
+    <text x="480" y="108" font-size="15" font-weight="700" fill="#1F2937">Problem Tracking</text>
+    <text x="480" y="132" font-size="12" fill="#4B5563">Every problem a patient</text>
+    <text x="480" y="150" font-size="12" fill="#4B5563">has mentioned, marked</text>
+    <text x="480" y="168" font-size="12" fill="#4B5563">resolved or ongoing —</text>
+    <text x="480" y="186" font-size="12" fill="#4B5563">a visible thread across</text>
+    <text x="480" y="204" font-size="12" fill="#4B5563">sessions, not just one.</text>
+
+    <!-- Pillar 4 -->
+    <rect x="675" y="30" width="195" height="220" rx="14" fill="#EAF6EF" stroke="#1E8F5C" stroke-width="1.2"/>
+    <circle cx="715" cy="70" r="16" fill="#1E8F5C"/>
+    <path d="M708 74l4-12 4 8 4-6 3 4" fill="none" stroke="#ffffff" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
+    <text x="695" y="108" font-size="15" font-weight="700" fill="#1F2937">Predictive Teaser</text>
+    <text x="695" y="132" font-size="12" fill="#4B5563">A quiet burnout trend</text>
+    <text x="695" y="150" font-size="12" fill="#4B5563">and a gentle follow-up</text>
+    <text x="695" y="168" font-size="12" fill="#4B5563">suggestion — shown as a</text>
+    <text x="695" y="186" font-size="12" fill="#4B5563">concept, not a finished</text>
+    <text x="695" y="204" font-size="12" fill="#4B5563">predictive model.</text>
+
+  </g>
+</svg>
